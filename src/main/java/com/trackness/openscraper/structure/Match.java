@@ -1,38 +1,40 @@
 package com.trackness.openscraper.structure;
 
 public class Match {
-    private String player1;
-    private String player2;
+    private Player player1;
+    private Player player2;
     private Integer round;
     private Integer index;
     private Player expectedWinner;
 
-    public String getPlayer1() { return player1; }
-    public String getPlayer2() { return player2; }
+    public Player getPlayer1() { return player1; }
+    public Player getPlayer2() { return player2; }
     public Integer getRound() { return round; }
     public Integer getIndex() { return index; }
 
     public void printDetails() {
-        System.out.printf("Round %s, Match %s: %s vs %s\n",
-                player1,
-                player2,
+        System.out.printf("Round %s, Match %s: %s%s vs %s%s\n",
                 round,
-                index
+                index + 1,
+                player1.getNameStandard(),
+                player1.getSeed() != 0 ? String.format(" (%s)", player1.getSeed()) : "",
+                player2.getNameStandard(),
+                player2.getSeed() != 0 ? String.format(" (%s)", player2.getSeed()) : ""
         );
     }
 
     public static class Builder {
-        private String player1;
-        private String player2;
+        private Player player1;
+        private Player player2;
         private Integer round;
         private Integer index;
 
-        public Builder withPlayer1(String player1) {
+        public Builder withPlayer1(Player player1) {
             this.player1 = player1;
             return this;
         }
 
-        public Builder withPlayer2(String player2) {
+        public Builder withPlayer2(Player player2) {
             this.player2 = player2;
             return this;
         }
@@ -57,12 +59,3 @@ public class Match {
         }
     }
 }
-
-//    Match match = new Match.Builder()
-//            .withPlayer1(player1)
-//            .withPlayer2(player2)
-//            .inRound(0)
-//            .atIndex(i)
-//            .build();
-//
-//                match.printDetails();

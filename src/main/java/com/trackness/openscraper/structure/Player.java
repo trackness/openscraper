@@ -8,6 +8,7 @@ public class Player {
     private String nationality;
     private int seed = 0;
     private float odds;
+    private boolean qualifier = false;
 
     public String getNameFirst() { return nameFirst; }
     public String getNameLast() { return nameLast; }
@@ -16,9 +17,23 @@ public class Player {
     public String getNationality() { return nationality; }
     public int getSeed() { return seed; }
     public float getOdds() { return odds; }
+    public boolean getQualifier() { return qualifier; }
 
     public void setSeed(int seed) { this.seed = seed; }
     public void setOdds(float odds) { this.odds = odds; }
+
+    public static class Qualifier{
+        public Player build() {
+            Player player = new Player();
+            player.nameFirst = "Q";
+            player.nameLast = "Q";
+            player.nameStandard = "Q";
+            player.nameFormal = "Q";
+            player.nationality = "QAL";
+            player.qualifier = true;
+            return player;
+        }
+    }
 
     public static class Builder {
         private String nameStandard;

@@ -31,11 +31,6 @@
             <version>${version.jsoup}</version>
         </dependency>
         <dependency>
-            <groupId>net.sourceforge.htmlunit</groupId>
-            <artifactId>htmlunit</artifactId>
-            <version>2.19</version>
-        </dependency>
-        <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.7.0</version>
@@ -67,7 +62,6 @@
                                     <mainClass>com.trackness.openscraper.handler.App</mainClass>
                                 </transformer>
                             </transformers>
-
                         </configuration>
                     </execution>
                 </executions>

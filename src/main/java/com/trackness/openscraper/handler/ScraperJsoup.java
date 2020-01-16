@@ -15,7 +15,7 @@ public class ScraperJsoup {
     }
 
     public static Document getResultFromSearch(String searchUrl) {
-        System.out.println("--- JSoup from URL---");
+        System.out.println("--- JSoup from URL ---");
         try {
             drawDocument = Jsoup.connect(searchUrl).userAgent("Mozilla").get();
             System.out.printf("%s\n", drawDocument.title());

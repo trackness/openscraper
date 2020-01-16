@@ -1,6 +1,7 @@
 package com.trackness.openscraper.ausopen;
 
 import com.trackness.openscraper.handler.ScraperJsoup;
+import com.trackness.openscraper.structure.Match;
 import com.trackness.openscraper.structure.Player;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -8,6 +9,7 @@ import org.jsoup.select.Elements;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static java.lang.Integer.parseInt;
 
@@ -21,41 +23,40 @@ public class DrawParser {
     public static void parse(Document rawDraw) {
         Elements foundMatches = rawDraw.getElementsByClass("score-card carousel-index-0 -first-round -full-draw");
         System.out.printf("Matches found: %s\n", foundMatches.size());
-//        ArrayList<Match> matches = new ArrayList<>();
+        ArrayList<Match> matches = new ArrayList<>();
         for (int i = 0; i < foundMatches.size(); i++) {
-//            Elements players = foundMatches.get(i).getElementById("match-teams").child(0).children();
-            Elements players = foundMatches.get(i).getElementsByClass("player");
-
-            Element rawPlayer1 = players.get(0);
-            Element rawPlayer2 = players.get(1);
-//            System.out.println(String.format("Match %s: P1: %s || P2: %s", i + 1, rawPlayer1.text(), rawPlayer2.text()));
-            Player player1 = playerHelper(rawPlayer1);
-//
-//            Match match = new Match.Builder()
-//                    .withPlayer1()
-//                    .withPlayer2()
-//                    .atIndex(i)
-//                    .inRound()
-//                    .build();
-//            matches.add(i, match);
+            Elements players = foundMatches.get(i).getElementsByClass("team-detail__players");
+            matches.add(i, new Match.Builder()
+                    .withPlayer1(playerHelper(players.get(0)))
+                    .withPlayer2(playerHelper(players.get(1)))
+                    .atIndex(i)
+                    .inRound(1)
+                    .build());
+        }
+        for (Match match: matches) {
+            match.printDetails();
         }
     }
 
     private static Player playerHelper(Element rawPlayer) {
-//        final String nameStandard = ;
-//        final String nameFormal = ;
-//        final String nationality = ;
-        Elements seedElements = rawPlayer.getElementsByClass("player-seed");
-        int seed = seedElements.size() == 0 ? 0 : parseInt(seedElements.first().toString().replaceAll("\\D", ""));
-
-        Player player = new Player.Builder()
-                .setNameStandard(rawPlayer.getElementsByClass("player-full-name").first().text())
-                .setNameFormal(rawPlayer.getElementsByClass("player-short-name").first().text())
-                .setNationality(rawPlayer.getElementsByClass("player-nationality-text").first().text())
-                .build();
-
-        if (seed != 0) player.setSeed(seed);
-        System.out.println(player.getNameFirst());
+        Player player;
+        if (rawPlayer.getElementsByClass("player -qualifier").size() != 0) {
+            player = new Player.Qualifier().build();
+        } else {
+            player = new Player.Builder()
+                    .setNameStandard(getText(rawPlayer, "player-full-name"))
+                    .setNameFormal(getText(rawPlayer,"player-short-name"))
+                    .setNationality(getText(rawPlayer,"player-nationality-text"))
+                    .build();
+            Elements seedElements = rawPlayer.getElementsByClass("player-seed");
+            if (seedElements.size() != 0 && !seedElements.first().text().contains("WC")) {
+                player.setSeed(parseInt(seedElements.first().toString().replaceAll("\\D", "")));
+            }
+        }
         return player;
+    }
+
+    private static String getText(Element rawPlayer, String classText) {
+        return rawPlayer.getElementsByClass(classText).first().text();
     }
 }
