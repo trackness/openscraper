@@ -1,0 +1,2 @@
+#!/bin/bash
+exec mvn -f `dirname $0`/pom.xml "$@" clean package
