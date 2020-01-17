@@ -15,23 +15,26 @@ import static java.lang.Integer.parseInt;
 
 public class DrawScraper {
 
+    private static boolean debug = false;
     private static ArrayList<Match> matches = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
         matches = getMatchesFromDocument(getDocumentFromFile(new File("src/main/resources/AO_Womens.html")));
     }
 
-    public static ArrayList<Match> getFirstRoundMatches(File drawSource) throws IOException {
+    public static ArrayList<Match> getFirstRoundMatches(boolean debugThis, File drawSource) throws IOException {
+        debug = debugThis;
         return getMatchesFromDocument(getDocumentFromFile(drawSource));
     }
 
-    public static Document getDocumentFromFile(File drawSource) throws IOException {
+    private static Document getDocumentFromFile(File drawSource) throws IOException {
         return Jsoup.parse(drawSource, null);
     }
 
-    public static ArrayList<Match> getMatchesFromDocument(Document rawDraw) {
+    private static ArrayList<Match> getMatchesFromDocument(Document rawDraw) {
         Elements foundMatches = rawDraw.getElementsByClass("score-card carousel-index-0 -first-round -full-draw");
-        System.out.printf("Matches found: %s\n", foundMatches.size());
+        if (debug) System.out.println(String.format("\n%s", rawDraw.title()));
+        if (debug) System.out.println(String.format("Matches found: %s\n", foundMatches.size()));
         for (int i = 0; i < foundMatches.size(); i++) {
             Elements players = foundMatches.get(i).getElementsByClass("team-detail__players");
             matches.add(i, new Match.Builder()

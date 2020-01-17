@@ -1,40 +1,40 @@
 package com.trackness.openscraper.oddschecker;
 
-public class PlayerOddsList {
+public class PlayerOdds {
     private String name;
     private float odds;
     private int confidence;
 
-    public String  getName() { return name; }
-    public float  getOdds() { return odds; }
-    public int  getConfidence() { return confidence; }
+    String  getName() { return name; }
+    float  getOdds() { return odds; }
+    int  getConfidence() { return confidence; }
 
-    public class Builder {
+    public static class Builder {
         private String name;
         private float odds;
         private int confidence;
 
-        public Builder setName(String name) {
+        Builder setName(String name) {
             this.name = name;
             return this;
         }
 
-        public Builder setOdds(float odds) {
+        Builder setOdds(float odds) {
             this.odds = odds;
             return this;
         }
 
-        public Builder setConfidence(int confidence) {
+        Builder setConfidence(int confidence) {
             this.confidence = confidence;
             return this;
         }
 
-        public PlayerOddsList build() {
-            PlayerOddsList playerOddsList = new PlayerOddsList();
-            playerOddsList.name = this.name;
-            playerOddsList.odds = this.odds;
-            playerOddsList.confidence = this.confidence;
-            return playerOddsList;
+        public PlayerOdds build() {
+            PlayerOdds playerOdds = new PlayerOdds();
+            playerOdds.name = this.name;
+            playerOdds.odds = this.odds;
+            playerOdds.confidence = this.confidence;
+            return playerOdds;
         }
     }
 }
