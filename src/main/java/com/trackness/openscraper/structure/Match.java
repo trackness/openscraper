@@ -13,14 +13,30 @@ public class Match {
     public Integer getIndex() { return index; }
 
     public void printDetails() {
-        System.out.printf("Round %s, Match %s: %s%s vs %s%s\n",
+        System.out.println(String.format(
+                "Round %s, Match %s: %s%s vs %s%s%s",
                 round,
                 index + 1,
                 player1.getNameStandard(),
                 player1.getSeed() != 0 ? String.format(" (%s)", player1.getSeed()) : "",
                 player2.getNameStandard(),
-                player2.getSeed() != 0 ? String.format(" (%s)", player2.getSeed()) : ""
-        );
+                player2.getSeed() != 0 ? String.format(" (%s)", player2.getSeed()) : "",
+                expectedWinner != null ? String.format(" - expected winner: %s", expectedWinner.getNameStandard()) : ""
+        ));
+    }
+
+    public void setExpectedWinner() {
+        switch (player1.getOdds().compareTo(player2.getOdds())) {
+            case -1:
+                this.expectedWinner = player1;
+                break;
+//            case 0:
+//                this.expectedWinner = player1;
+//                break;
+            case 1:
+                this.expectedWinner = player2;
+                break;
+        }
     }
 
     public static class Builder {

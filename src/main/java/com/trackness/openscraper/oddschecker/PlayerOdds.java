@@ -1,17 +1,19 @@
 package com.trackness.openscraper.oddschecker;
 
+import java.math.BigDecimal;
+
 public class PlayerOdds {
     private String name;
-    private float odds;
+    private BigDecimal odds;
     private int confidence;
 
-    String  getName() { return name; }
-    float  getOdds() { return odds; }
-    int  getConfidence() { return confidence; }
+    public String  getName() { return name; }
+    public BigDecimal getOdds() { return odds; }
+    public int  getConfidence() { return confidence; }
 
     public static class Builder {
         private String name;
-        private float odds;
+        private BigDecimal odds;
         private int confidence;
 
         Builder setName(String name) {
@@ -19,7 +21,7 @@ public class PlayerOdds {
             return this;
         }
 
-        Builder setOdds(float odds) {
+        Builder setOdds(BigDecimal odds) {
             this.odds = odds;
             return this;
         }

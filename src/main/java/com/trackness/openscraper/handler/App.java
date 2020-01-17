@@ -16,19 +16,25 @@ public class App {
 
     private static boolean debug = true;
 
-    private static ArrayList<PlayerOdds> odds;
-    private static ArrayList<Match> firstRoundMatchesWomen;
+    private static final File drawSourceMen = new File("src/main/resources/AO_Mens.html");
     private static final File drawSourceWomen = new File("src/main/resources/AO_Womens.html");
+    private static final String oddsSourceMen = "https://www.oddschecker.com/tennis/australian-open/mens/mens-australian-open/winner";
+    private static final String oddsSourceWomen = "https://www.oddschecker.com/tennis/australian-open/womens/winner";
 
     public static void main(String[] args) throws IOException {
-        odds = OddsScraper.getOdds(debug);
-        firstRoundMatchesWomen = DrawScraper.getFirstRoundMatches(debug, drawSourceWomen);
+//        genderAusOpen(oddsSourceMen, drawSourceMen);
+        genderAusOpen(oddsSourceWomen, drawSourceWomen);
         Tournament australianOpen = new Tournament.Builder()
                 .withName(AUS_OPEN.getName())
                 .withMens()
                 .withWomens()
                 .build()
                 ;
+    }
+
+    private static void genderAusOpen(String oddsSource, File drawSource) throws IOException {
+        ArrayList<PlayerOdds> oddsList = OddsScraper.getOdds(debug, oddsSource);
+        ArrayList<Match> firstRoundMatches = DrawScraper.getFirstRoundMatches(debug, drawSourceWomen, oddsList);
     }
 
 }
