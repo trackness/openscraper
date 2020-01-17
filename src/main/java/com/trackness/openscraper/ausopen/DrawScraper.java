@@ -1,8 +1,8 @@
 package com.trackness.openscraper.ausopen;
 
-import com.trackness.openscraper.handler.ScraperJsoup;
 import com.trackness.openscraper.structure.Match;
 import com.trackness.openscraper.structure.Player;
+import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -13,17 +13,25 @@ import java.util.ArrayList;
 
 import static java.lang.Integer.parseInt;
 
-public class DrawParser {
+public class DrawScraper {
+
+    private static ArrayList<Match> matches = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
-        File wSource = new File("src/main/resources/AO_Womens.html");
-        parse(ScraperJsoup.getResultFromFile(wSource));
+        matches = getMatchesFromDocument(getDocumentFromFile(new File("src/main/resources/AO_Womens.html")));
     }
 
-    public static void parse(Document rawDraw) {
+    public static ArrayList<Match> getFirstRoundMatches(File drawSource) throws IOException {
+        return getMatchesFromDocument(getDocumentFromFile(drawSource));
+    }
+
+    public static Document getDocumentFromFile(File drawSource) throws IOException {
+        return Jsoup.parse(drawSource, null);
+    }
+
+    public static ArrayList<Match> getMatchesFromDocument(Document rawDraw) {
         Elements foundMatches = rawDraw.getElementsByClass("score-card carousel-index-0 -first-round -full-draw");
         System.out.printf("Matches found: %s\n", foundMatches.size());
-        ArrayList<Match> matches = new ArrayList<>();
         for (int i = 0; i < foundMatches.size(); i++) {
             Elements players = foundMatches.get(i).getElementsByClass("team-detail__players");
             matches.add(i, new Match.Builder()
@@ -36,6 +44,7 @@ public class DrawParser {
         for (Match match: matches) {
             match.printDetails();
         }
+        return matches;
     }
 
     private static Player playerHelper(Element rawPlayer) {
@@ -44,9 +53,9 @@ public class DrawParser {
             player = new Player.Qualifier().build();
         } else {
             player = new Player.Builder()
-                    .setNameStandard(getText(rawPlayer, "player-full-name"))
-                    .setNameFormal(getText(rawPlayer,"player-short-name"))
-                    .setNationality(getText(rawPlayer,"player-nationality-text"))
+                    .setNameStandard(getTextByClass(rawPlayer, "player-full-name"))
+                    .setNameFormal(getTextByClass(rawPlayer,"player-short-name"))
+                    .setNationality(getTextByClass(rawPlayer,"player-nationality-text"))
                     .build();
             Elements seedElements = rawPlayer.getElementsByClass("player-seed");
             if (seedElements.size() != 0 && !seedElements.first().text().contains("WC")) {
@@ -56,7 +65,7 @@ public class DrawParser {
         return player;
     }
 
-    private static String getText(Element rawPlayer, String classText) {
-        return rawPlayer.getElementsByClass(classText).first().text();
+    private static String getTextByClass(Element element, String classText) {
+        return element.getElementsByClass(classText).first().text();
     }
 }
