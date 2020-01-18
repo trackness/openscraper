@@ -41,14 +41,14 @@ public class App {
                 )))
                 .build();
 
-        tournament.getCategories().get(0)
-                .setAllResults(
-                        DrawScraper.getMatchesFromFile(PROPERTIES.getProperty("category.mens.file.players")),
-                        OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.mens.url.odds")));
-        tournament.getCategories().get(1)
-                .setAllResults(
-                        DrawScraper.getMatchesFromFile(PROPERTIES.getProperty("category.womens.file.players")),
-                        OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.womens.url.odds")));
+        tournament.getCategories().get(0).setAllResults(
+                DrawScraper.getMatchesFromFile(PROPERTIES.getProperty("category.mens.file.players")),
+                    OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.mens.url.odds")));
+        tournament.getCategories().get(1).setAllResults(
+                    DrawScraper.getMatchesFromFile(PROPERTIES.getProperty("category.womens.file.players")),
+                    OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.womens.url.odds")));
+
+        tournament.printAll();
     }
 
     private static Properties loadConfig() {

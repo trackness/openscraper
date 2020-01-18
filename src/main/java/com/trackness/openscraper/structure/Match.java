@@ -7,9 +7,9 @@ public class Match {
     private Integer index;
     private Player expectedWinner;
 
-    public Player getPlayer1() { return player1; }
-    public Player getPlayer2() { return player2; }
-    public Player getExpectedWinner() { return expectedWinner; }
+    Player getPlayer1() { return player1; }
+    Player getPlayer2() { return player2; }
+    Player getExpectedWinner() { return expectedWinner; }
     public Integer getRound() { return round; }
     public Integer getIndex() { return index; }
 
@@ -26,7 +26,7 @@ public class Match {
         ));
     }
 
-    public void setExpectedWinner() {
+    void setExpectedWinner() {
         switch (player1.getOdds().compareTo(player2.getOdds())) {
             case -1:
                 this.expectedWinner = player1;
@@ -39,6 +39,18 @@ public class Match {
                 this.expectedWinner = player2;
                 break;
         }
+    }
+
+    void printAll(String string, Integer matches) {
+        System.out.println(String.format(
+                "%s Match %s / %s: %s vs %s - Winner: %s",
+                string,
+                index + 1,
+                matches,
+                player1.getNameStandard(),
+                player2.getNameStandard(),
+                expectedWinner.getNameStandard()
+                ));
     }
 
     public static class Builder {

@@ -9,6 +9,12 @@ public class Tournament {
     public String getName() { return name; }
     public ArrayList<Category> getCategories() { return categories; }
 
+    public void printAll() {
+        for (Category category: categories) {
+            category.outputAll(String.format("%s", name));
+        }
+    }
+
     public static class Builder {
         private String name;
         private ArrayList<Category> categories;

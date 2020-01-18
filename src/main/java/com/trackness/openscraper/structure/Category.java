@@ -60,6 +60,12 @@ public class Category {
         return matched;
     }
 
+    void outputAll(String string) {
+        for (Round round : rounds) {
+            round.printAll(String.format("%s - %s", string, name));
+        }
+    }
+
     public static class Builder {
         private String name;
         private ArrayList<Round> rounds;

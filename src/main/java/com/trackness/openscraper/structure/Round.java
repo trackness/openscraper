@@ -52,6 +52,12 @@ class Round {
 
     }
 
+    void printAll(String string) {
+        for (Match match : matches) {
+            match.printAll(String.format("%s Round %s", string, index + 1), matches.size());
+        }
+    }
+
     public static class Builder {
         private String name;
         private int index;
