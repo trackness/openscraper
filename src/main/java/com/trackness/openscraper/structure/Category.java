@@ -59,24 +59,22 @@ public class Category {
                 "║"
         ));
         for (int i = 0; i < rounds.size(); i++) {
-            if (i == 0) System.out.println(String.format(
-                    "%s%s%s%s%s%s",
-                    StringUtils.rightPad("╠", PAD_ROUND + 1, "═"),
-                    StringUtils.rightPad("╤", PAD_MATCH + 1, "═"),
-                    StringUtils.rightPad("╦", PAD_PLAYER + 1, "═"),
-                    StringUtils.rightPad("╤", PAD_PLAYER + 1, "═"),
-                    StringUtils.rightPad("╦", PAD_WINNER + 1, "═"),
+            if (i == 0) System.out.println(
+                    StringUtils.rightPad("╠", PAD_ROUND + 1, "═") +
+                    StringUtils.rightPad("╤", PAD_MATCH + 1, "═") +
+                    StringUtils.rightPad("╦", PAD_PLAYER + 1, "═") +
+                    StringUtils.rightPad("╤", PAD_PLAYER + 1, "═") +
+                    StringUtils.rightPad("╦", PAD_WINNER + 1, "═") +
                     "╣"
-            ));
-            if (i != 0) System.out.println(String.format(
-                    "%s%s%s%s%s%s",
-                    StringUtils.rightPad("╠", PAD_ROUND + 1, "═"),
-                    StringUtils.rightPad("╪", PAD_MATCH + 1, "═"),
-                    StringUtils.rightPad("╬", PAD_PLAYER + 1, "═"),
-                    StringUtils.rightPad("╪", PAD_PLAYER + 1, "═"),
-                    StringUtils.rightPad("╬", PAD_WINNER + 1, "═"),
+            );
+            if (i != 0) System.out.println(
+                    StringUtils.rightPad("╠", PAD_ROUND + 1, "═") +
+                    StringUtils.rightPad("╪", PAD_MATCH + 1, "═") +
+                    StringUtils.rightPad("╬", PAD_PLAYER + 1, "═") +
+                    StringUtils.rightPad("╪", PAD_PLAYER + 1, "═") +
+                    StringUtils.rightPad("╬", PAD_WINNER + 1, "═") +
                     "╣"
-            ));
+            );
             rounds.get(i).printAll();
         }
         System.out.println(String.format(
