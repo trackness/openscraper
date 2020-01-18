@@ -1,0 +1,303 @@
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                         Australian Open - Mens                                         ║
+╠═══════╤═════════╦═══════════════════════════════╤═══════════════════════════════╦══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   1   │  1 / 64 ║ (ESP) R. Nadal            (1) │ (BOL) H. Dellien              ║ R. Nadal             ║
+║   1   │  2 / 64 ║ (ARG) F. Delbonis             │ (POR) J. Sousa                ║ F. Delbonis          ║
+║   1   │  3 / 64 ║ (USA) C. Eubanks              │ (GER) P. Gojowczyk            ║ P. Gojowczyk         ║
+║   1   │  4 / 64 ║ (SVK) J. Kovalik              │ (ESP) P. Carreno Busta   (27) ║ P. Carreno Busta     ║
+║   1   │  5 / 64 ║ (AUS) N. Kyrgios         (23) │ (ITA) L. Sonego               ║ N. Kyrgios           ║
+║   1   │  6 / 64 ║ (URU) P. Cuevas               │ (FRA) G. Simon                ║ G. Simon             ║
+║   1   │  7 / 64 ║ (JPN) Y. Uchiyama             │ (SWE) M. Ymer                 ║ M. Ymer              ║
+║   1   │  8 / 64 ║ (ESP) M. Vilella Martinez     │ (RUS) K. Khachanov       (16) ║ K. Khachanov         ║
+║   1   │  9 / 64 ║ (FRA) G. Monfils         (10) │ (TPE) Y. Lu                   ║ G. Monfils           ║
+║   1   │ 10 / 64 ║ (CRO) I. Karlovic             │ (CAN) V. Pospisil             ║ V. Pospisil          ║
+║   1   │ 11 / 64 ║ (AUS) J. Duckworth            │ (SLO) A. Bedene               ║ A. Bedene            ║
+║   1   │ 12 / 64 ║ (LAT) E. Gulbis               │ (CAN) F. Auger-Aliassime (20) ║ E. Gulbis            ║
+║   1   │ 13 / 64 ║ (USA) T. Fritz           (29) │ (NED) T. Griekspoor           ║ T. Fritz             ║
+║   1   │ 14 / 64 ║ (BLR) I. Ivashka              │ (RSA) K. Anderson             ║ K. Anderson          ║
+║   1   │ 15 / 64 ║ (AUS) A. Bolt                 │ (ESP) A. Ramos-Vinolas        ║ A. Ramos-Vinolas     ║
+║   1   │ 16 / 64 ║ (FRA) A. Mannarino            │ (AUT) D. Thiem            (5) ║ D. Thiem             ║
+║   1   │ 17 / 64 ║ (RUS) D. Medvedev         (4) │ (USA) F. Tiafoe               ║ D. Medvedev          ║
+║   1   │ 18 / 64 ║ (GER) D. Koepfer              │ (ESP) P. Martinez             ║ D. Koepfer           ║
+║   1   │ 19 / 64 ║ (FRA) H. Gaston               │ (ESP) J. Munar                ║ J. Munar             ║
+║   1   │ 20 / 64 ║ (AUS) A. Popyrin              │ (FRA) J. Tsonga          (28) ║ J. Tsonga            ║
+║   1   │ 21 / 64 ║ (USA) J. Isner           (19) │ (BRA) T. Monteiro             ║ J. Isner             ║
+║   1   │ 22 / 64 ║ (CHI) A. Tabilo               │ (COL) D. Galan                ║ A. Tabilo            ║
+║   1   │ 23 / 64 ║ (SRB) M. Kecmanovic           │ (ITA) A. Seppi                ║ M. Kecmanovic        ║
+║   1   │ 24 / 64 ║ (BIH) D. Dzumhur              │ (SUI) S. Wawrinka        (15) ║ S. Wawrinka          ║
+║   1   │ 25 / 64 ║ (BEL) D. Goffin          (11) │ (FRA) J. Chardy               ║ D. Goffin            ║
+║   1   │ 26 / 64 ║ (FRA) P. Herbert              │ (GBR) C. Norrie               ║ C. Norrie            ║
+║   1   │ 27 / 64 ║ (JPN) Y. Sugita               │ (FRA) E. Benchetrit           ║ Y. Sugita            ║
+║   1   │ 28 / 64 ║ (AUS) C. O'Connell            │ (RUS) A. Rublev          (17) ║ A. Rublev            ║
+║   1   │ 29 / 64 ║ (GEO) N. Basilashvili    (26) │ (KOR) S. Kwon                 ║ N. Basilashvili      ║
+║   1   │ 30 / 64 ║ (ESP) F. Verdasco             │ (RUS) E. Donskoy              ║ F. Verdasco          ║
+║   1   │ 31 / 64 ║ (NOR) C. Ruud                 │ (BLR) E. Gerasimov            ║ C. Ruud              ║
+║   1   │ 32 / 64 ║ (ITA) M. Cecchinato           │ (GER) A. Zverev           (7) ║ A. Zverev            ║
+║   1   │ 33 / 64 ║ (ITA) M. Berrettini       (8) │ (AUS) A. Harris               ║ M. Berrettini        ║
+║   1   │ 34 / 64 ║ (USA) T. Sandgren             │ (ARG) M. Trungelliti          ║ T. Sandgren          ║
+║   1   │ 35 / 64 ║ (ESP) R. Carballes Baena      │ (LTU) R. Berankis             ║ R. Berankis          ║
+║   1   │ 36 / 64 ║ (USA) S. Querrey              │ (CRO) B. Coric           (25) ║ B. Coric             ║
+║   1   │ 37 / 64 ║ (ARG) G. Pella           (22) │ (AUS) J. Smith                ║ G. Pella             ║
+║   1   │ 38 / 64 ║ (EGY) M. Safwat               │ (FRA) G. Barrere              ║ G. Barrere           ║
+║   1   │ 39 / 64 ║ (AUS) J. Thompson             │ (KAZ) A. Bublik               ║ A. Bublik            ║
+║   1   │ 40 / 64 ║ (USA) R. Opelka               │ (ITA) F. Fognini         (12) ║ F. Fognini           ║
+║   1   │ 41 / 64 ║ (CAN) D. Shapovalov      (13) │ (HUN) M. Fucsovics            ║ D. Shapovalov        ║
+║   1   │ 42 / 64 ║ (ITA) J. Sinner               │ (AUS) M. Purcell              ║ J. Sinner            ║
+║   1   │ 43 / 64 ║ (ARG) L. Mayer                │ (USA) T. Paul                 ║ T. Paul              ║
+║   1   │ 44 / 64 ║ (ARG) J. Londero              │ (BUL) G. Dimitrov        (18) ║ G. Dimitrov          ║
+║   1   │ 45 / 64 ║ (POL) H. Hurkacz         (31) │ (AUT) D. Novak                ║ H. Hurkacz           ║
+║   1   │ 46 / 64 ║ (AUS) J. Millman              │ (FRA) U. Humbert              ║ U. Humbert           ║
+║   1   │ 47 / 64 ║ (FRA) Q. Halys                │ (SRB) F. Krajinovic           ║ F. Krajinovic        ║
+║   1   │ 48 / 64 ║ (USA) S. Johnson              │ (SUI) R. Federer          (3) ║ R. Federer           ║
+║   1   │ 49 / 64 ║ (GRE) S. Tsitsipas        (6) │ (ITA) S. Caruso               ║ S. Tsitsipas         ║
+║   1   │ 50 / 64 ║ (GER) P. Kohlschreiber        │ (USA) M. Giron                ║ P. Kohlschreiber     ║
+║   1   │ 51 / 64 ║ (CHI) C. Garin                │ (ITA) S. Travaglia            ║ C. Garin             ║
+║   1   │ 52 / 64 ║ (MDA) R. Albot                │ (CAN) M. Raonic          (32) ║ M. Raonic            ║
+║   1   │ 53 / 64 ║ (FRA) B. Paire           (21) │ (GER) C. Stebe                ║ B. Paire             ║
+║   1   │ 54 / 64 ║ (CRO) M. Cilic                │ (FRA) C. Moutet               ║ M. Cilic             ║
+║   1   │ 55 / 64 ║ (ESP) P. Andujar              │ (USA) M. Mmoh                 ║ P. Andujar           ║
+║   1   │ 56 / 64 ║ (ESP) F. Lopez                │ (ESP) R. Bautista Agut    (9) ║ F. Lopez             ║
+║   1   │ 57 / 64 ║ (ARG) D. Schwartzman     (14) │ (RSA) L. Harris               ║ D. Schwartzman       ║
+║   1   │ 58 / 64 ║ (ESP) A. Davidovich Fokina    │ (SVK) N. Gombos               ║ A. Davidovich Fokina ║
+║   1   │ 59 / 64 ║ (AUS) M. Polmans              │ (KAZ) M. Kukushkin            ║ M. Kukushkin         ║
+║   1   │ 60 / 64 ║ (GBR) K. Edmund               │ (SRB) D. Lajovic         (24) ║ K. Edmund            ║
+║   1   │ 61 / 64 ║ (GBR) D. Evans           (30) │ (USA) M. McDonald             ║ D. Evans             ║
+║   1   │ 62 / 64 ║ (JPN) Y. Nishioka             │ (SRB) L. Djere                ║ Y. Nishioka          ║
+║   1   │ 63 / 64 ║ (JPN) T. Ito                  │ (IND) P. Gunneswaran          ║ P. Gunneswaran       ║
+║   1   │ 64 / 64 ║ (GER) J. Struff               │ (SRB) N. Djokovic         (2) ║ N. Djokovic          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   2   │  1 / 32 ║ (ESP) R. Nadal            (1) │ (ARG) F. Delbonis             ║ R. Nadal             ║
+║   2   │  2 / 32 ║ (GER) P. Gojowczyk            │ (ESP) P. Carreno Busta   (27) ║ P. Carreno Busta     ║
+║   2   │  3 / 32 ║ (AUS) N. Kyrgios         (23) │ (FRA) G. Simon                ║ N. Kyrgios           ║
+║   2   │  4 / 32 ║ (SWE) M. Ymer                 │ (RUS) K. Khachanov       (16) ║ K. Khachanov         ║
+║   2   │  5 / 32 ║ (FRA) G. Monfils         (10) │ (CAN) V. Pospisil             ║ G. Monfils           ║
+║   2   │  6 / 32 ║ (SLO) A. Bedene               │ (LAT) E. Gulbis               ║ A. Bedene            ║
+║   2   │  7 / 32 ║ (USA) T. Fritz           (29) │ (RSA) K. Anderson             ║ K. Anderson          ║
+║   2   │  8 / 32 ║ (ESP) A. Ramos-Vinolas        │ (AUT) D. Thiem            (5) ║ D. Thiem             ║
+║   2   │  9 / 32 ║ (RUS) D. Medvedev         (4) │ (GER) D. Koepfer              ║ D. Medvedev          ║
+║   2   │ 10 / 32 ║ (ESP) J. Munar                │ (FRA) J. Tsonga          (28) ║ J. Tsonga            ║
+║   2   │ 11 / 32 ║ (USA) J. Isner           (19) │ (CHI) A. Tabilo               ║ J. Isner             ║
+║   2   │ 12 / 32 ║ (SRB) M. Kecmanovic           │ (SUI) S. Wawrinka        (15) ║ S. Wawrinka          ║
+║   2   │ 13 / 32 ║ (BEL) D. Goffin          (11) │ (GBR) C. Norrie               ║ D. Goffin            ║
+║   2   │ 14 / 32 ║ (JPN) Y. Sugita               │ (RUS) A. Rublev          (17) ║ A. Rublev            ║
+║   2   │ 15 / 32 ║ (GEO) N. Basilashvili    (26) │ (ESP) F. Verdasco             ║ F. Verdasco          ║
+║   2   │ 16 / 32 ║ (NOR) C. Ruud                 │ (GER) A. Zverev           (7) ║ A. Zverev            ║
+║   2   │ 17 / 32 ║ (ITA) M. Berrettini       (8) │ (USA) T. Sandgren             ║ M. Berrettini        ║
+║   2   │ 18 / 32 ║ (LTU) R. Berankis             │ (CRO) B. Coric           (25) ║ B. Coric             ║
+║   2   │ 19 / 32 ║ (ARG) G. Pella           (22) │ (FRA) G. Barrere              ║ G. Pella             ║
+║   2   │ 20 / 32 ║ (KAZ) A. Bublik               │ (ITA) F. Fognini         (12) ║ F. Fognini           ║
+║   2   │ 21 / 32 ║ (CAN) D. Shapovalov      (13) │ (ITA) J. Sinner               ║ D. Shapovalov        ║
+║   2   │ 22 / 32 ║ (USA) T. Paul                 │ (BUL) G. Dimitrov        (18) ║ G. Dimitrov          ║
+║   2   │ 23 / 32 ║ (POL) H. Hurkacz         (31) │ (FRA) U. Humbert              ║ H. Hurkacz           ║
+║   2   │ 24 / 32 ║ (SRB) F. Krajinovic           │ (SUI) R. Federer          (3) ║ R. Federer           ║
+║   2   │ 25 / 32 ║ (GRE) S. Tsitsipas        (6) │ (GER) P. Kohlschreiber        ║ S. Tsitsipas         ║
+║   2   │ 26 / 32 ║ (CHI) C. Garin                │ (CAN) M. Raonic          (32) ║ M. Raonic            ║
+║   2   │ 27 / 32 ║ (FRA) B. Paire           (21) │ (CRO) M. Cilic                ║ M. Cilic             ║
+║   2   │ 28 / 32 ║ (ESP) P. Andujar              │ (ESP) F. Lopez                ║ F. Lopez             ║
+║   2   │ 29 / 32 ║ (ARG) D. Schwartzman     (14) │ (ESP) A. Davidovich Fokina    ║ D. Schwartzman       ║
+║   2   │ 30 / 32 ║ (KAZ) M. Kukushkin            │ (GBR) K. Edmund               ║ K. Edmund            ║
+║   2   │ 31 / 32 ║ (GBR) D. Evans           (30) │ (JPN) Y. Nishioka             ║ D. Evans             ║
+║   2   │ 32 / 32 ║ (IND) P. Gunneswaran          │ (SRB) N. Djokovic         (2) ║ N. Djokovic          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   3   │  1 / 16 ║ (ESP) R. Nadal            (1) │ (ESP) P. Carreno Busta   (27) ║ R. Nadal             ║
+║   3   │  2 / 16 ║ (AUS) N. Kyrgios         (23) │ (RUS) K. Khachanov       (16) ║ N. Kyrgios           ║
+║   3   │  3 / 16 ║ (FRA) G. Monfils         (10) │ (SLO) A. Bedene               ║ G. Monfils           ║
+║   3   │  4 / 16 ║ (RSA) K. Anderson             │ (AUT) D. Thiem            (5) ║ D. Thiem             ║
+║   3   │  5 / 16 ║ (RUS) D. Medvedev         (4) │ (FRA) J. Tsonga          (28) ║ D. Medvedev          ║
+║   3   │  6 / 16 ║ (USA) J. Isner           (19) │ (SUI) S. Wawrinka        (15) ║ S. Wawrinka          ║
+║   3   │  7 / 16 ║ (BEL) D. Goffin          (11) │ (RUS) A. Rublev          (17) ║ A. Rublev            ║
+║   3   │  8 / 16 ║ (ESP) F. Verdasco             │ (GER) A. Zverev           (7) ║ A. Zverev            ║
+║   3   │  9 / 16 ║ (ITA) M. Berrettini       (8) │ (CRO) B. Coric           (25) ║ M. Berrettini        ║
+║   3   │ 10 / 16 ║ (ARG) G. Pella           (22) │ (ITA) F. Fognini         (12) ║ F. Fognini           ║
+║   3   │ 11 / 16 ║ (CAN) D. Shapovalov      (13) │ (BUL) G. Dimitrov        (18) ║ D. Shapovalov        ║
+║   3   │ 12 / 16 ║ (POL) H. Hurkacz         (31) │ (SUI) R. Federer          (3) ║ R. Federer           ║
+║   3   │ 13 / 16 ║ (GRE) S. Tsitsipas        (6) │ (CAN) M. Raonic          (32) ║ S. Tsitsipas         ║
+║   3   │ 14 / 16 ║ (CRO) M. Cilic                │ (ESP) F. Lopez                ║ M. Cilic             ║
+║   3   │ 15 / 16 ║ (ARG) D. Schwartzman     (14) │ (GBR) K. Edmund               ║ D. Schwartzman       ║
+║   3   │ 16 / 16 ║ (GBR) D. Evans           (30) │ (SRB) N. Djokovic         (2) ║ N. Djokovic          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   4   │  1 /  8 ║ (ESP) R. Nadal            (1) │ (AUS) N. Kyrgios         (23) ║ R. Nadal             ║
+║   4   │  2 /  8 ║ (FRA) G. Monfils         (10) │ (AUT) D. Thiem            (5) ║ D. Thiem             ║
+║   4   │  3 /  8 ║ (RUS) D. Medvedev         (4) │ (SUI) S. Wawrinka        (15) ║ D. Medvedev          ║
+║   4   │  4 /  8 ║ (RUS) A. Rublev          (17) │ (GER) A. Zverev           (7) ║ A. Zverev            ║
+║   4   │  5 /  8 ║ (ITA) M. Berrettini       (8) │ (ITA) F. Fognini         (12) ║ M. Berrettini        ║
+║   4   │  6 /  8 ║ (CAN) D. Shapovalov      (13) │ (SUI) R. Federer          (3) ║ R. Federer           ║
+║   4   │  7 /  8 ║ (GRE) S. Tsitsipas        (6) │ (CRO) M. Cilic                ║ S. Tsitsipas         ║
+║   4   │  8 /  8 ║ (ARG) D. Schwartzman     (14) │ (SRB) N. Djokovic         (2) ║ N. Djokovic          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   5   │  1 /  4 ║ (ESP) R. Nadal            (1) │ (AUT) D. Thiem            (5) ║ R. Nadal             ║
+║   5   │  2 /  4 ║ (RUS) D. Medvedev         (4) │ (GER) A. Zverev           (7) ║ D. Medvedev          ║
+║   5   │  3 /  4 ║ (ITA) M. Berrettini       (8) │ (SUI) R. Federer          (3) ║ R. Federer           ║
+║   5   │  4 /  4 ║ (GRE) S. Tsitsipas        (6) │ (SRB) N. Djokovic         (2) ║ N. Djokovic          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   6   │  1 /  2 ║ (ESP) R. Nadal            (1) │ (RUS) D. Medvedev         (4) ║ R. Nadal             ║
+║   6   │  2 /  2 ║ (SUI) R. Federer          (3) │ (SRB) N. Djokovic         (2) ║ N. Djokovic          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   7   │  1 /  1 ║ (ESP) R. Nadal            (1) │ (SRB) N. Djokovic         (2) ║ N. Djokovic          ║
+╚═══════╧═════════╩═══════════════════════════════╧═══════════════════════════════╩══════════════════════╝
+
+╔════════════════════════════════════════════════════════════════════════════════════════════════════════╗
+║                                        Australian Open - Womens                                        ║
+╠═══════╤═════════╦═══════════════════════════════╤═══════════════════════════════╦══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   1   │  1 / 64 ║ (AUS) A. Barty            (1) │ (UKR) L. Tsurenko             ║ A. Barty             ║
+║   1   │  2 / 64 ║ (SLO) P. Hercog               │ (SWE) R. Peterson             ║ R. Peterson          ║
+║   1   │  3 / 64 ║ (BLR) A. Sasnovich            │ (BEL) G. Minnen               ║ A. Sasnovich         ║
+║   1   │  4 / 64 ║ (USA) B. Pera                 │ (KAZ) E. Rybakina        (29) ║ E. Rybakina          ║
+║   1   │  5 / 64 ║ (USA) A. Riske           (18) │ (CHN) Y. Wang                 ║ A. Riske             ║
+║   1   │  6 / 64 ║ (SUI) V. Golubic              │ (CHN) L. Zhu                  ║ V. Golubic           ║
+║   1   │  7 / 64 ║ (GER) J. Goerges              │ (SVK) V. Kuzmova              ║ J. Goerges           ║
+║   1   │  8 / 64 ║ (USA) C. McHale               │ (CRO) P. Martic          (13) ║ P. Martic            ║
+║   1   │  9 / 64 ║ (USA) M. Keys            (10) │ (RUS) D. Kasatkina            ║ M. Keys              ║
+║   1   │ 10 / 64 ║ (POL) M. Linette              │ (NED) A. Rus                  ║ M. Linette           ║
+║   1   │ 11 / 64 ║ (JPN) N. Hibino               │ (CHN) S. Peng                 ║ S. Peng              ║
+║   1   │ 12 / 64 ║ (RUS) M. Gasparyan            │ (GRE) M. Sakkari         (22) ║ M. Sakkari           ║
+║   1   │ 13 / 64 ║ (RUS) E. Alexandrova     (25) │ (SUI) J. Teichmann            ║ E. Alexandrova       ║
+║   1   │ 14 / 64 ║ (EST) K. Kanepi               │ (CZE) B. Krejcikova           ║ K. Kanepi            ║
+║   1   │ 15 / 64 ║ (ESP) P. Badosa               │ (SWE) J. Larsson              ║ P. Badosa            ║
+║   1   │ 16 / 64 ║ (CZE) K. Siniakova            │ (CZE) P. Kvitova          (7) ║ P. Kvitova           ║
+║   1   │ 17 / 64 ║ (JPN) N. Osaka            (3) │ (CZE) M. Bouzkova             ║ N. Osaka             ║
+║   1   │ 18 / 64 ║ (CHN) S. Zheng                │ (RUS) A. Kalinskaya           ║ S. Zheng             ║
+║   1   │ 19 / 64 ║ (USA) V. Williams             │ (USA) C. Gauff                ║ C. Gauff             ║
+║   1   │ 20 / 64 ║ (ROU) S. Cirstea              │ (CZE) B. Strycova        (32) ║ B. Strycova          ║
+║   1   │ 21 / 64 ║ (USA) S. Stephens        (24) │ (CHN) S. Zhang                ║ S. Stephens          ║
+║   1   │ 22 / 64 ║ (AUS) S. Stosur               │ (USA) C. McNally              ║ S. Stosur            ║
+║   1   │ 23 / 64 ║ (USA) A. Li                   │ (AUS) L. Cabrera              ║ L. Cabrera           ║
+║   1   │ 24 / 64 ║ (ITA) M. Trevisan             │ (USA) S. Kenin           (14) ║ S. Kenin             ║
+║   1   │ 25 / 64 ║ (GBR) J. Konta           (12) │ (TUN) O. Jabeur               ║ J. Konta             ║
+║   1   │ 26 / 64 ║ (USA) M. Brengle              │ (FRA) C. Garcia               ║ C. Garcia            ║
+║   1   │ 27 / 64 ║ (USA) K. Ahn                  │ (DEN) C. Wozniacki            ║ C. Wozniacki         ║
+║   1   │ 28 / 64 ║ (SLO) K. Juvan                │ (UKR) D. Yastremska      (23) ║ D. Yastremska        ║
+║   1   │ 29 / 64 ║ (CHN) Q. Wang            (27) │ (FRA) P. Parmentier           ║ Q. Wang              ║
+║   1   │ 30 / 64 ║ (FRA) F. Ferro                │ (BEL) A. Van Uytvanck         ║ A. Van Uytvanck      ║
+║   1   │ 31 / 64 ║ (SLO) T. Zidansek             │ (KOR) N. Han                  ║ T. Zidansek          ║
+║   1   │ 32 / 64 ║ (RUS) A. Potapova             │ (USA) S. Williams         (8) ║ S. Williams          ║
+║   1   │ 33 / 64 ║ (SUI) B. Bencic           (6) │ (SVK) A. Schmiedlova          ║ B. Bencic            ║
+║   1   │ 34 / 64 ║ (RUS) L. Samsonova            │ (LAT) J. Ostapenko            ║ J. Ostapenko         ║
+║   1   │ 35 / 64 ║ (ESP) S. Sorribes Tormo       │ (RUS) V. Kudermetova          ║ V. Kudermetova       ║
+║   1   │ 36 / 64 ║ (AUS) A. Sharma               │ (EST) A. Kontaveit       (28) ║ A. Kontaveit         ║
+║   1   │ 37 / 64 ║ (CRO) D. Vekic           (19) │ (RUS) M. Sharapova            ║ D. Vekic             ║
+║   1   │ 38 / 64 ║ (FRA) A. Cornet               │ (ROU) M. Niculescu            ║ M. Niculescu         ║
+║   1   │ 39 / 64 ║ (POL) I. Swiatek              │ (HUN) T. Babos                ║ I. Swiatek           ║
+║   1   │ 40 / 64 ║ (ESP) C. Suárez Navarro       │ (BLR) A. Sabalenka       (11) ║ A. Sabalenka         ║
+║   1   │ 41 / 64 ║ (BEL) E. Mertens         (16) │ (MNE) D. Kovinic              ║ E. Mertens           ║
+║   1   │ 42 / 64 ║ (CZE) K. Pliskova             │ (GBR) H. Watson               ║ K. Pliskova          ║
+║   1   │ 43 / 64 ║ (USA) C. Bellis               │ (GER) T. Maria                ║ C. Bellis            ║
+║   1   │ 44 / 64 ║ (BEL) K. Flipkens             │ (CZE) K. Muchova         (20) ║ K. Muchova           ║
+║   1   │ 45 / 64 ║ (USA) D. Collins         (26) │ (RUS) V. Diatchenko           ║ D. Collins           ║
+║   1   │ 46 / 64 ║ (KAZ) Y. Putintseva           │ (TPE) S. Hsieh                ║ S. Hsieh             ║
+║   1   │ 47 / 64 ║ (GBR) H. Dart                 │ (JPN) M. Doi                  ║ M. Doi               ║
+║   1   │ 48 / 64 ║ (USA) J. Brady                │ (ROU) S. Halep            (4) ║ S. Halep             ║
+║   1   │ 49 / 64 ║ (UKR) E. Svitolina        (5) │ (GBR) K. Boulter              ║ E. Svitolina         ║
+║   1   │ 50 / 64 ║ (USA) L. Davis                │ (CAN) L. Fernandez            ║ L. Davis             ║
+║   1   │ 51 / 64 ║ (ESP) G. Muguruza             │ (USA) S. Rogers               ║ S. Rogers            ║
+║   1   │ 52 / 64 ║ (AUS) A. Tomljanovic          │ (LAT) A. Sevastova       (31) ║ A. Sevastova         ║
+║   1   │ 53 / 64 ║ (USA) A. Anisimova       (21) │ (KAZ) Z. Diyas                ║ A. Anisimova         ║
+║   1   │ 54 / 64 ║ (ITA) J. Paolini              │ (RUS) A. Blinkova             ║ A. Blinkova          ║
+║   1   │ 55 / 64 ║ (UKR) K. Bondarenko           │ (AUS) A. Rodionova            ║ K. Bondarenko        ║
+║   1   │ 56 / 64 ║ (ROU) I. Begu                 │ (NED) K. Bertens          (9) ║ K. Bertens           ║
+║   1   │ 57 / 64 ║ (CZE) M. Vondrousova     (15) │ (RUS) S. Kuznetsova           ║ M. Vondrousova       ║
+║   1   │ 58 / 64 ║ (GER) A. Lottner              │ (ITA) C. Giorgi               ║ C. Giorgi            ║
+║   1   │ 59 / 64 ║ (UKR) K. Kozlova              │ (AUS) P. Hon                  ║ K. Kozlova           ║
+║   1   │ 60 / 64 ║ (ITA) E. Cocciaretto          │ (GER) A. Kerber          (17) ║ A. Kerber            ║
+║   1   │ 61 / 64 ║ (RUS) A. Pavlyuchenkova  (30) │ (SRB) N. Stojanovic           ║ A. Pavlyuchenkova    ║
+║   1   │ 62 / 64 ║ (USA) T. Townsend             │ (USA) J. Pegula               ║ J. Pegula            ║
+║   1   │ 63 / 64 ║ (GER) L. Siegemund            │ (USA) C. Vandeweghe           ║ L. Siegemund         ║
+║   1   │ 64 / 64 ║ (FRA) K. Mladenovic           │ (CZE) K. Pliskova         (2) ║ K. Pliskova          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   2   │  1 / 32 ║ (AUS) A. Barty            (1) │ (SWE) R. Peterson             ║ A. Barty             ║
+║   2   │  2 / 32 ║ (BLR) A. Sasnovich            │ (KAZ) E. Rybakina        (29) ║ E. Rybakina          ║
+║   2   │  3 / 32 ║ (USA) A. Riske           (18) │ (SUI) V. Golubic              ║ A. Riske             ║
+║   2   │  4 / 32 ║ (GER) J. Goerges              │ (CRO) P. Martic          (13) ║ J. Goerges           ║
+║   2   │  5 / 32 ║ (USA) M. Keys            (10) │ (POL) M. Linette              ║ M. Keys              ║
+║   2   │  6 / 32 ║ (CHN) S. Peng                 │ (GRE) M. Sakkari         (22) ║ M. Sakkari           ║
+║   2   │  7 / 32 ║ (RUS) E. Alexandrova     (25) │ (EST) K. Kanepi               ║ E. Alexandrova       ║
+║   2   │  8 / 32 ║ (ESP) P. Badosa               │ (CZE) P. Kvitova          (7) ║ P. Kvitova           ║
+║   2   │  9 / 32 ║ (JPN) N. Osaka            (3) │ (CHN) S. Zheng                ║ N. Osaka             ║
+║   2   │ 10 / 32 ║ (USA) C. Gauff                │ (CZE) B. Strycova        (32) ║ C. Gauff             ║
+║   2   │ 11 / 32 ║ (USA) S. Stephens        (24) │ (AUS) S. Stosur               ║ S. Stephens          ║
+║   2   │ 12 / 32 ║ (AUS) L. Cabrera              │ (USA) S. Kenin           (14) ║ S. Kenin             ║
+║   2   │ 13 / 32 ║ (GBR) J. Konta           (12) │ (FRA) C. Garcia               ║ J. Konta             ║
+║   2   │ 14 / 32 ║ (DEN) C. Wozniacki            │ (UKR) D. Yastremska      (23) ║ D. Yastremska        ║
+║   2   │ 15 / 32 ║ (CHN) Q. Wang            (27) │ (BEL) A. Van Uytvanck         ║ Q. Wang              ║
+║   2   │ 16 / 32 ║ (SLO) T. Zidansek             │ (USA) S. Williams         (8) ║ S. Williams          ║
+║   2   │ 17 / 32 ║ (SUI) B. Bencic           (6) │ (LAT) J. Ostapenko            ║ B. Bencic            ║
+║   2   │ 18 / 32 ║ (RUS) V. Kudermetova          │ (EST) A. Kontaveit       (28) ║ A. Kontaveit         ║
+║   2   │ 19 / 32 ║ (CRO) D. Vekic           (19) │ (ROU) M. Niculescu            ║ D. Vekic             ║
+║   2   │ 20 / 32 ║ (POL) I. Swiatek              │ (BLR) A. Sabalenka       (11) ║ A. Sabalenka         ║
+║   2   │ 21 / 32 ║ (BEL) E. Mertens         (16) │ (CZE) K. Pliskova             ║ E. Mertens           ║
+║   2   │ 22 / 32 ║ (USA) C. Bellis               │ (CZE) K. Muchova         (20) ║ K. Muchova           ║
+║   2   │ 23 / 32 ║ (USA) D. Collins         (26) │ (TPE) S. Hsieh                ║ D. Collins           ║
+║   2   │ 24 / 32 ║ (JPN) M. Doi                  │ (ROU) S. Halep            (4) ║ S. Halep             ║
+║   2   │ 25 / 32 ║ (UKR) E. Svitolina        (5) │ (USA) L. Davis                ║ E. Svitolina         ║
+║   2   │ 26 / 32 ║ (USA) S. Rogers               │ (LAT) A. Sevastova       (31) ║ A. Sevastova         ║
+║   2   │ 27 / 32 ║ (USA) A. Anisimova       (21) │ (RUS) A. Blinkova             ║ A. Anisimova         ║
+║   2   │ 28 / 32 ║ (UKR) K. Bondarenko           │ (NED) K. Bertens          (9) ║ K. Bertens           ║
+║   2   │ 29 / 32 ║ (CZE) M. Vondrousova     (15) │ (ITA) C. Giorgi               ║ M. Vondrousova       ║
+║   2   │ 30 / 32 ║ (UKR) K. Kozlova              │ (GER) A. Kerber          (17) ║ A. Kerber            ║
+║   2   │ 31 / 32 ║ (RUS) A. Pavlyuchenkova  (30) │ (USA) J. Pegula               ║ A. Pavlyuchenkova    ║
+║   2   │ 32 / 32 ║ (GER) L. Siegemund            │ (CZE) K. Pliskova         (2) ║ K. Pliskova          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   3   │  1 / 16 ║ (AUS) A. Barty            (1) │ (KAZ) E. Rybakina        (29) ║ A. Barty             ║
+║   3   │  2 / 16 ║ (USA) A. Riske           (18) │ (GER) J. Goerges              ║ A. Riske             ║
+║   3   │  3 / 16 ║ (USA) M. Keys            (10) │ (GRE) M. Sakkari         (22) ║ M. Keys              ║
+║   3   │  4 / 16 ║ (RUS) E. Alexandrova     (25) │ (CZE) P. Kvitova          (7) ║ P. Kvitova           ║
+║   3   │  5 / 16 ║ (JPN) N. Osaka            (3) │ (USA) C. Gauff                ║ N. Osaka             ║
+║   3   │  6 / 16 ║ (USA) S. Stephens        (24) │ (USA) S. Kenin           (14) ║ S. Kenin             ║
+║   3   │  7 / 16 ║ (GBR) J. Konta           (12) │ (UKR) D. Yastremska      (23) ║ D. Yastremska        ║
+║   3   │  8 / 16 ║ (CHN) Q. Wang            (27) │ (USA) S. Williams         (8) ║ S. Williams          ║
+║   3   │  9 / 16 ║ (SUI) B. Bencic           (6) │ (EST) A. Kontaveit       (28) ║ B. Bencic            ║
+║   3   │ 10 / 16 ║ (CRO) D. Vekic           (19) │ (BLR) A. Sabalenka       (11) ║ A. Sabalenka         ║
+║   3   │ 11 / 16 ║ (BEL) E. Mertens         (16) │ (CZE) K. Muchova         (20) ║ E. Mertens           ║
+║   3   │ 12 / 16 ║ (USA) D. Collins         (26) │ (ROU) S. Halep            (4) ║ S. Halep             ║
+║   3   │ 13 / 16 ║ (UKR) E. Svitolina        (5) │ (LAT) A. Sevastova       (31) ║ E. Svitolina         ║
+║   3   │ 14 / 16 ║ (USA) A. Anisimova       (21) │ (NED) K. Bertens          (9) ║ A. Anisimova         ║
+║   3   │ 15 / 16 ║ (CZE) M. Vondrousova     (15) │ (GER) A. Kerber          (17) ║ M. Vondrousova       ║
+║   3   │ 16 / 16 ║ (RUS) A. Pavlyuchenkova  (30) │ (CZE) K. Pliskova         (2) ║ K. Pliskova          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   4   │  1 /  8 ║ (AUS) A. Barty            (1) │ (USA) A. Riske           (18) ║ A. Barty             ║
+║   4   │  2 /  8 ║ (USA) M. Keys            (10) │ (CZE) P. Kvitova          (7) ║ M. Keys              ║
+║   4   │  3 /  8 ║ (JPN) N. Osaka            (3) │ (USA) S. Kenin           (14) ║ N. Osaka             ║
+║   4   │  4 /  8 ║ (UKR) D. Yastremska      (23) │ (USA) S. Williams         (8) ║ S. Williams          ║
+║   4   │  5 /  8 ║ (SUI) B. Bencic           (6) │ (BLR) A. Sabalenka       (11) ║ A. Sabalenka         ║
+║   4   │  6 /  8 ║ (BEL) E. Mertens         (16) │ (ROU) S. Halep            (4) ║ S. Halep             ║
+║   4   │  7 /  8 ║ (UKR) E. Svitolina        (5) │ (USA) A. Anisimova       (21) ║ E. Svitolina         ║
+║   4   │  8 /  8 ║ (CZE) M. Vondrousova     (15) │ (CZE) K. Pliskova         (2) ║ K. Pliskova          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   5   │  1 /  4 ║ (AUS) A. Barty            (1) │ (USA) M. Keys            (10) ║ A. Barty             ║
+║   5   │  2 /  4 ║ (JPN) N. Osaka            (3) │ (USA) S. Williams         (8) ║ S. Williams          ║
+║   5   │  3 /  4 ║ (BLR) A. Sabalenka       (11) │ (ROU) S. Halep            (4) ║ S. Halep             ║
+║   5   │  4 /  4 ║ (UKR) E. Svitolina        (5) │ (CZE) K. Pliskova         (2) ║ K. Pliskova          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   6   │  1 /  2 ║ (AUS) A. Barty            (1) │ (USA) S. Williams         (8) ║ S. Williams          ║
+║   6   │  2 /  2 ║ (ROU) S. Halep            (4) │ (CZE) K. Pliskova         (2) ║ K. Pliskova          ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║ Round │  Match  ║           Player 1            │           Player 2            ║        Winner        ║
+╠═══════╪═════════╬═══════════════════════════════╪═══════════════════════════════╬══════════════════════╣
+║   7   │  1 /  1 ║ (USA) S. Williams         (8) │ (CZE) K. Pliskova         (2) ║ S. Williams          ║
+╚═══════╧═════════╩═══════════════════════════════╧═══════════════════════════════╩══════════════════════╝

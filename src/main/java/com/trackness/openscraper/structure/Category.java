@@ -1,6 +1,7 @@
 package com.trackness.openscraper.structure;
 
 import com.trackness.openscraper.oddschecker.PlayerOdds;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
 
@@ -8,6 +9,12 @@ import static com.trackness.openscraper.App.DEBUG;
 import static com.trackness.openscraper.App.DEBUG_LINE;
 import static com.trackness.openscraper.App.MATCH_DEBUG;
 import static com.trackness.openscraper.App.ODDS_DEBUG;
+import static com.trackness.openscraper.structure.Tournament.PAD_MATCH;
+import static com.trackness.openscraper.structure.Tournament.PAD_PLAYER;
+import static com.trackness.openscraper.structure.Tournament.PAD_ROUND;
+import static com.trackness.openscraper.structure.Tournament.PAD_TOTAL;
+import static com.trackness.openscraper.structure.Tournament.PAD_WINNER;
+import static com.trackness.openscraper.structure.Tournament.pad;
 
 public class Category {
     private String name;
@@ -60,10 +67,48 @@ public class Category {
         return matched;
     }
 
-    void outputAll(String string) {
-        for (Round round : rounds) {
-            round.printAll(String.format("%s - %s", string, name));
+    void printAll(String tournamentName) {
+        System.out.println(String.format("%s%s%s", "╔", pad(PAD_TOTAL), "╗"));
+        System.out.println(String.format(
+                "%s%s%s",
+                "║",
+                StringUtils.center(
+                        String.format("%s - %s", tournamentName, name),
+                        PAD_TOTAL
+                ),
+                "║"
+        ));
+
+        for (int i = 0; i < rounds.size(); i++) {
+            if (i == 0) System.out.println(String.format(
+                    "%s%s%s%s%s%s",
+                    StringUtils.rightPad("╠", PAD_ROUND + 1, "═"),
+                    StringUtils.rightPad("╤", PAD_MATCH + 1, "═"),
+                    StringUtils.rightPad("╦", PAD_PLAYER + 1, "═"),
+                    StringUtils.rightPad("╤", PAD_PLAYER + 1, "═"),
+                    StringUtils.rightPad("╦", PAD_WINNER + 1, "═"),
+                    "╣"
+            ));
+            if (i != 0) System.out.println(String.format(
+                    "%s%s%s%s%s%s%s%s%s%s%s",
+                    "╠", StringUtils.center("", PAD_ROUND, "═"),
+                    "╪", StringUtils.center("", PAD_MATCH, "═"),
+                    "╬", StringUtils.center("", PAD_PLAYER, "═"),
+                    "╪", StringUtils.center("", PAD_PLAYER, "═"),
+                    "╬", StringUtils.center("", PAD_WINNER, "═"),
+                    "╣"
+            ));
+            rounds.get(i).printAll();
         }
+        System.out.println(String.format(
+                "%s%s%s%s%s%s%s%s%s%s%s",
+                "╚", pad(PAD_ROUND),
+                "╧", pad(PAD_MATCH),
+                "╩", pad(PAD_PLAYER),
+                "╧", pad(PAD_PLAYER),
+                "╩", pad(PAD_WINNER),
+                "╝"
+        ));
     }
 
     public static class Builder {

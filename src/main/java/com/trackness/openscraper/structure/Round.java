@@ -1,9 +1,15 @@
 package com.trackness.openscraper.structure;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.util.ArrayList;
 
 import static com.trackness.openscraper.App.DEBUG_DONE;
 import static com.trackness.openscraper.App.MATCH_SETTING_DEBUG;
+import static com.trackness.openscraper.structure.Tournament.PAD_MATCH;
+import static com.trackness.openscraper.structure.Tournament.PAD_PLAYER;
+import static com.trackness.openscraper.structure.Tournament.PAD_ROUND;
+import static com.trackness.openscraper.structure.Tournament.PAD_WINNER;
 
 class Round {
     private String name;
@@ -52,9 +58,27 @@ class Round {
 
     }
 
-    void printAll(String string) {
+    void printAll() {
+        System.out.println(String.format(
+                "%s%s%s%s%s%s%s%s%s%s%s",
+                "║", StringUtils.center("Round", PAD_ROUND, " "),
+                "│", StringUtils.center("Match", PAD_MATCH, " "),
+                "║", StringUtils.center("Player 1", PAD_PLAYER, " "),
+                "│", StringUtils.center("Player 2", PAD_PLAYER, " "),
+                "║", StringUtils.center("Winner", PAD_WINNER, " "),
+                "║"
+        ));
+        System.out.println(String.format(
+                "%s%s%s%s%s%s%s%s%s%s%s",
+                "╠", StringUtils.center("", PAD_ROUND, "═"),
+                "╪", StringUtils.center("", PAD_MATCH, "═"),
+                "╬", StringUtils.center("", PAD_PLAYER, "═"),
+                "╪", StringUtils.center("", PAD_PLAYER, "═"),
+                "╬", StringUtils.center("", PAD_WINNER, "═"),
+                "╣"
+        ));
         for (Match match : matches) {
-            match.printAll(String.format("%s Round %s", string, index + 1), matches.size());
+            match.printAll(index + 1, matches.size());
         }
     }
 

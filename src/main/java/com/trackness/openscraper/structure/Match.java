@@ -1,5 +1,12 @@
 package com.trackness.openscraper.structure;
 
+import org.apache.commons.lang.StringUtils;
+
+import static com.trackness.openscraper.structure.Tournament.PAD_MATCH;
+import static com.trackness.openscraper.structure.Tournament.PAD_PLAYER;
+import static com.trackness.openscraper.structure.Tournament.PAD_ROUND;
+import static com.trackness.openscraper.structure.Tournament.PAD_WINNER;
+
 public class Match {
     private Player player1;
     private Player player2;
@@ -41,15 +48,15 @@ public class Match {
         }
     }
 
-    void printAll(String string, Integer matches) {
+    void printAll(int round, int matches) {
         System.out.println(String.format(
-                "%s Match %s / %s: %s vs %s - Winner: %s",
-                string,
-                index + 1,
-                matches,
-                player1.getNameStandard(),
-                player2.getNameStandard(),
-                expectedWinner.getNameStandard()
+                "%s%s%s%s%s%s%s%s%s%s%s",
+                "║", StringUtils.center(String.valueOf(round), PAD_ROUND),
+                "│", StringUtils.center(String.format(" %2s / %2s ", index + 1, matches), PAD_MATCH),
+                "║", StringUtils.rightPad(String.format(" %s ", player1.printAll()), PAD_PLAYER),
+                "│", StringUtils.rightPad(String.format(" %s ", player2.printAll()), PAD_PLAYER),
+                "║", StringUtils.rightPad(String.format(" %s ", expectedWinner.getNameFormal()), PAD_WINNER),
+                "║"
                 ));
     }
 

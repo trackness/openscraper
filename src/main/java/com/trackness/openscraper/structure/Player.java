@@ -1,6 +1,10 @@
 package com.trackness.openscraper.structure;
 
+import org.apache.commons.lang.StringUtils;
+
 import java.math.BigDecimal;
+
+import static com.trackness.openscraper.structure.Tournament.PAD_PLAYER;
 
 public class Player {
     private String nameFirst;
@@ -15,8 +19,8 @@ public class Player {
 
     public String getNameFirst() { return nameFirst; }
     public String getNameLast() { return nameLast; }
-    public String getNameStandard() { return nameStandard; }
-    public String getNameFormal() { return nameFormal; }
+    String getNameStandard() { return nameStandard; }
+    String getNameFormal() { return nameFormal; }
     public String getNationality() { return nationality; }
     int getSeed() { return seed; }
     BigDecimal getOdds() { return odds; }
@@ -24,8 +28,16 @@ public class Player {
     public boolean getQualifier() { return qualifier; }
 
     public void setSeed(int seed) { this.seed = seed; }
-    public void setOdds(BigDecimal odds) { this.odds = odds; }
-    public void setConfidence(int confidence) { this.confidence = confidence; }
+    void setOdds(BigDecimal odds) { this.odds = odds; }
+    void setConfidence(int confidence) { this.confidence = confidence; }
+
+    String printAll() {
+        return String.format(
+                "%s%s",
+                StringUtils.rightPad(String.format("%s %s", nationality, nameFormal), PAD_PLAYER - 6),
+                seed != 0 ? StringUtils.leftPad(String.format("(%s)", seed), 4) : ""
+        );
+    }
 
     public static class Qualifier{
         public Player build() {
@@ -34,7 +46,7 @@ public class Player {
             player.nameLast = "Q";
             player.nameStandard = "Q";
             player.nameFormal = "Q";
-            player.nationality = "QAL";
+            player.nationality = "(QAL)";
             player.qualifier = true;
             return player;
         }
