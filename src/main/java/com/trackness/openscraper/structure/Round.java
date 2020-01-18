@@ -2,7 +2,8 @@ package com.trackness.openscraper.structure;
 
 import java.util.ArrayList;
 
-import static com.trackness.openscraper.App.*;
+import static com.trackness.openscraper.App.DEBUG_DONE;
+import static com.trackness.openscraper.App.MATCH_SETTING_DEBUG;
 
 class Round {
     private String name;
@@ -13,14 +14,24 @@ class Round {
     public int getIndex() { return index; }
     ArrayList<Match> getMatches() { return matches; }
 
-    void setMatchList(ArrayList<Match> matches) {
-        if (MATCH_SETTING_DEBUG) System.out.println(String.format("- (ROUND) Setting %s results for round 1.. ", matches.size()));
-        if (MATCH_SETTING_DEBUG) for (int i = 0; i < matches.size(); i++) {
-            String matchUp = String.format("- %s vs %s", matches.get(i).getPlayer1().getNameStandard(), matches.get(i).getPlayer2().getNameStandard());
-            System.out.print(String.format("- Setting round %s match %s / %s %s", index + 1, i + 1, matches.size(), matchUp));
-            System.out.println(DEBUG_DONE);
+    void setMatchList(ArrayList<Match> firstRoundMatchList) {
+        if (MATCH_SETTING_DEBUG) System.out.println(String.format("- (ROUND) Setting %s results for round 1.. ", firstRoundMatchList.size()));
+        for (int i = 0; i < firstRoundMatchList.size(); i++) {
+            if (MATCH_SETTING_DEBUG) System.out.print(String.format(
+                    "- Setting round %s match %s / %s %s",
+                    index + 1,
+                    i + 1,
+                    firstRoundMatchList.size(),
+                    String.format(
+                            "- %s vs %s",
+                            firstRoundMatchList.get(i).getPlayer1().getNameStandard(),
+                            firstRoundMatchList.get(i).getPlayer2().getNameStandard()
+                    )
+            ));
+            if (MATCH_SETTING_DEBUG) System.out.println(DEBUG_DONE);
+            firstRoundMatchList.get(i).setExpectedWinner();
         }
-        this.matches = matches;
+        this.matches = firstRoundMatchList;
     }
 
     void setMatchListFromPriorRound(ArrayList<Match> matchListFromPriorRound) {
@@ -38,6 +49,7 @@ class Round {
             matches.add(i, match);
             if (MATCH_SETTING_DEBUG) System.out.println(DEBUG_DONE);
         }
+
     }
 
     public static class Builder {

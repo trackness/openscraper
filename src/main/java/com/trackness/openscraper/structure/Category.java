@@ -4,7 +4,10 @@ import com.trackness.openscraper.oddschecker.PlayerOdds;
 
 import java.util.ArrayList;
 
-import static com.trackness.openscraper.App.*;
+import static com.trackness.openscraper.App.DEBUG;
+import static com.trackness.openscraper.App.DEBUG_LINE;
+import static com.trackness.openscraper.App.MATCH_DEBUG;
+import static com.trackness.openscraper.App.ODDS_DEBUG;
 
 public class Category {
     private String name;
@@ -22,13 +25,10 @@ public class Category {
     private void setPlayerOdds(ArrayList<Match> matches, ArrayList<PlayerOdds> oddsList) {
         if (DEBUG) System.out.println(String.format("- Setting odds for %s players from %s playerOdds.. ", matches.size()*2, oddsList.size()));
         int matchedCounter = 0;
-        for (Match match : matches) {
-            for (PlayerOdds playerOdds : oddsList) {
-                if (oddsMatchCheck(match.getPlayer1(), playerOdds)) matchedCounter++;
-                if (oddsMatchCheck(match.getPlayer2(), playerOdds)) matchedCounter++;
-            }
-            match.setExpectedWinner();
-        }
+        for (Match match : matches) { for (PlayerOdds playerOdds : oddsList) {
+            if (oddsMatchCheck(match.getPlayer1(), playerOdds)) matchedCounter++;
+            if (oddsMatchCheck(match.getPlayer2(), playerOdds)) matchedCounter++;
+        }}
         if (DEBUG) System.out.println(String.format("- Odds set for %s / %s players", matchedCounter, matches.size()*2));
     }
 

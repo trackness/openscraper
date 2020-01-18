@@ -18,13 +18,10 @@ import static java.lang.Integer.parseInt;
 
 public class DrawScraper {
 
-    private static ArrayList<Match> matches = new ArrayList<>();
-
-    public static void main(String[] args) throws IOException {
-        matches = getMatchesFromFile("src/main/resources/AO_Womens.html");
-    }
+    private static ArrayList<Match> matches;
 
     public static ArrayList<Match> getMatchesFromFile(String drawSourceString) throws IOException {
+        matches = new ArrayList<>();
         if (DEBUG) System.out.println(DEBUG_LINE + "\n--- Getting first round match data from draw file ---\n" + DEBUG_LINE);
         return getMatchesFromElements(getElementsFromFile(drawSourceString));
     }
@@ -55,38 +52,6 @@ public class DrawScraper {
         return matches;
     }
 
-//    private static ArrayList<Match> updateWithOdds(ArrayList<Match> matchArrayList, ArrayList<PlayerOdds> oddsList) {
-//        System.out.println("--- Applying odds data to first round match data ---");
-//        System.out.println(String.format("%sSetting odds for matched players%s", DEBUG ? "\n" : "", DEBUG ? "\n" : ""));
-//        if (MATCH_DEBUG) System.out.println(String.format("------------ Round %s ------------", 1));
-//        int matched = 0;
-//        for (Match match : matchArrayList) {
-//            for (PlayerOdds playerOdds : oddsList) {
-//                if (match.getPlayer1().getNameStandard().equals(playerOdds.getName())) {
-//                    match.getPlayer1().setOdds(playerOdds.getOddsFromUrl());
-//                    match.getPlayer1().setConfidence(playerOdds.getConfidence());
-////                    if (debug) match.getPlayer1().printDetails();
-//                    matched++;
-//                }
-//                if (match.getPlayer2().getNameStandard().equals(playerOdds.getName())) {
-//                    match.getPlayer2().setOdds(playerOdds.getOddsFromUrl());
-//                    match.getPlayer2().setConfidence(playerOdds.getConfidence());
-////                    if (debug) match.getPlayer2().printDetails();
-//                    matched++;
-//                }
-//            }
-//            match.setExpectedWinner();
-//            if (MATCH_DEBUG) match.printDetails();
-//        }
-//        System.out.println(String.format("%sPlayers matched to odds: %s / %s%s",
-//                DEBUG ? "\n" : "",
-//                matched,
-//                oddsList.size(),
-//                DEBUG ? "\n" : ""
-//        ));
-//        return matchArrayList;
-//    }
-
     private static Player playerHelper(Element rawPlayer) {
         Player player;
         if (rawPlayer.getElementsByClass("player -qualifier").size() != 0) {
@@ -98,7 +63,11 @@ public class DrawScraper {
                     .setNationality(getTextByClass(rawPlayer,"player-nationality-text"))
                     .build();
             Elements seedElements = rawPlayer.getElementsByClass("player-seed");
-            if (seedElements.size() != 0 && !seedElements.first().text().contains("WC")) {
+            if (seedElements.size() != 0
+                    && !seedElements.first().text().contains("WC")
+                    && !seedElements.first().text().contains("Q")
+                    && !seedElements.first().text().contains("LL")
+            ) {
                 player.setSeed(parseInt(seedElements.first().toString().replaceAll("\\D", "")));
             }
         }
