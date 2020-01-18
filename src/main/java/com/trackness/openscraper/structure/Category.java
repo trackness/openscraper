@@ -5,10 +5,6 @@ import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
 
-import static com.trackness.openscraper.App.DEBUG;
-import static com.trackness.openscraper.App.DEBUG_LINE;
-import static com.trackness.openscraper.App.MATCH_DEBUG;
-import static com.trackness.openscraper.App.ODDS_DEBUG;
 import static com.trackness.openscraper.structure.Tournament.PAD_MATCH;
 import static com.trackness.openscraper.structure.Tournament.PAD_PLAYER;
 import static com.trackness.openscraper.structure.Tournament.PAD_ROUND;
@@ -24,47 +20,34 @@ public class Category {
     public ArrayList<Round> getRounds() { return rounds; }
 
     public void setAllResults(ArrayList<Match> matches, ArrayList<PlayerOdds> oddsList) {
-        if (DEBUG) System.out.println(DEBUG_LINE + "\n--- Setting all results for the " + name + " category ---\n" + DEBUG_LINE);
         setPlayerOdds(matches, oddsList);
         setFirstRound(matches);
         setRemainingRounds();
     }
     private void setPlayerOdds(ArrayList<Match> matches, ArrayList<PlayerOdds> oddsList) {
-        if (DEBUG) System.out.println(String.format("- Setting odds for %s players from %s playerOdds.. ", matches.size()*2, oddsList.size()));
-        int matchedCounter = 0;
         for (Match match : matches) { for (PlayerOdds playerOdds : oddsList) {
-            if (oddsMatchCheck(match.getPlayer1(), playerOdds)) matchedCounter++;
-            if (oddsMatchCheck(match.getPlayer2(), playerOdds)) matchedCounter++;
+            oddsMatchCheck(match.getPlayer1(), playerOdds);
+            oddsMatchCheck(match.getPlayer2(), playerOdds);
         }}
-        if (DEBUG) System.out.println(String.format("- Odds set for %s / %s players", matchedCounter, matches.size()*2));
     }
 
     private void setFirstRound(ArrayList<Match> matches) {
-        if (DEBUG) System.out.print(String.format("- (CATEGORY) Setting %s results for round 1.. ", matches.size()));
         rounds.get(0).setMatchList(matches);
-        if (DEBUG) System.out.println(String.format("(CATEGORY) %s results set", matches.size()));
 
     }
 
     private void setRemainingRounds() {
-        if (DEBUG) System.out.print("- Setting results for remaining rounds.. ");
         for (int i = 1; i < rounds.size(); i++) {
             int priorRound = i-1;
-            if (DEBUG) System.out.print(String.format("- (CATEGORY) Setting %s results for round %s from round %s.. ", rounds.get(priorRound).getMatches().size() / 2, i + 1, priorRound + 1));
             rounds.get(i).setMatchListFromPriorRound(rounds.get(priorRound).getMatches());
         }
     }
 
-    private boolean oddsMatchCheck(Player player, PlayerOdds playerOdds) {
-        if (ODDS_DEBUG) System.out.println(String.format("Checking %s against %s", player.getNameStandard(), playerOdds.getName()));
-        boolean matched = false;
+    private void oddsMatchCheck(Player player, PlayerOdds playerOdds) {
         if (player.getNameStandard().equals(playerOdds.getName())) {
             player.setOdds(playerOdds.getOdds());
             player.setConfidence(playerOdds.getConfidence());
-            matched = true;
-            if (MATCH_DEBUG && matched) System.out.println(String.format("Matched from playerOdds: %s", player.getNameStandard()));
         }
-        return matched;
     }
 
     void printAll(String tournamentName) {

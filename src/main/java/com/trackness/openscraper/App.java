@@ -18,13 +18,7 @@ import static java.lang.Integer.parseInt;
 
 public class App {
 
-    public static final String DEBUG_LINE = "-----------------------------------------------------";
-    public static final String DEBUG_DONE = " - Done.";
-    public static final boolean DEBUG = false;
-    public static final boolean MATCH_DEBUG = false;
-    public static final boolean ODDS_DEBUG = false;
-    public static final boolean MATCH_SETTING_DEBUG = false;
-    public static final Properties PROPERTIES = loadConfig();
+    private static final Properties PROPERTIES = loadConfig();
 
     public static void main(String[] args) throws IOException {
         Tournament tournament = new Tournament.Builder()
