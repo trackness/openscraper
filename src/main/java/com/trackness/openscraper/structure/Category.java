@@ -16,9 +16,6 @@ public class Category {
     private String name;
     private ArrayList<Round> rounds;
 
-    public String getName() { return name; }
-    public ArrayList<Round> getRounds() { return rounds; }
-
     public void setAllResults(ArrayList<Match> matches, ArrayList<PlayerOdds> oddsList) {
         setPlayerOdds(matches, oddsList);
         setFirstRound(matches);
@@ -61,7 +58,6 @@ public class Category {
                 ),
                 "║"
         ));
-
         for (int i = 0; i < rounds.size(); i++) {
             if (i == 0) System.out.println(String.format(
                     "%s%s%s%s%s%s",
@@ -73,23 +69,23 @@ public class Category {
                     "╣"
             ));
             if (i != 0) System.out.println(String.format(
-                    "%s%s%s%s%s%s%s%s%s%s%s",
-                    "╠", StringUtils.center("", PAD_ROUND, "═"),
-                    "╪", StringUtils.center("", PAD_MATCH, "═"),
-                    "╬", StringUtils.center("", PAD_PLAYER, "═"),
-                    "╪", StringUtils.center("", PAD_PLAYER, "═"),
-                    "╬", StringUtils.center("", PAD_WINNER, "═"),
+                    "%s%s%s%s%s%s",
+                    StringUtils.rightPad("╠", PAD_ROUND + 1, "═"),
+                    StringUtils.rightPad("╪", PAD_MATCH + 1, "═"),
+                    StringUtils.rightPad("╬", PAD_PLAYER + 1, "═"),
+                    StringUtils.rightPad("╪", PAD_PLAYER + 1, "═"),
+                    StringUtils.rightPad("╬", PAD_WINNER + 1, "═"),
                     "╣"
             ));
             rounds.get(i).printAll();
         }
         System.out.println(String.format(
-                "%s%s%s%s%s%s%s%s%s%s%s",
-                "╚", pad(PAD_ROUND),
-                "╧", pad(PAD_MATCH),
-                "╩", pad(PAD_PLAYER),
-                "╧", pad(PAD_PLAYER),
-                "╩", pad(PAD_WINNER),
+                "%s%s%s%s%s%s",
+                StringUtils.rightPad("╚", PAD_ROUND + 1, "═"),
+                StringUtils.rightPad("╧", PAD_MATCH + 1, "═"),
+                StringUtils.rightPad("╩", PAD_PLAYER + 1, "═"),
+                StringUtils.rightPad("╧", PAD_PLAYER + 1, "═"),
+                StringUtils.rightPad("╩", PAD_WINNER + 1, "═"),
                 "╝"
         ));
     }

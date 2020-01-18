@@ -31,7 +31,6 @@ class Round {
                     .withPlayer1(matchListFromPriorRound.get(i*2).getExpectedWinner())
                     .withPlayer2(matchListFromPriorRound.get((i*2)+1).getExpectedWinner())
                     .atIndex(i)
-                    .inRound(index)
                     .build();
             match.setExpectedWinner();
             matches.add(i, match);

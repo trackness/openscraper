@@ -11,15 +11,6 @@ public class PlayerOdds {
     public BigDecimal getOdds() { return odds; }
     public int  getConfidence() { return confidence; }
 
-    public void printDetails() {
-        System.out.println(String.format(
-                "%s: %s, confidence %s",
-                name,
-                odds,
-                confidence
-        ));
-    }
-
     public static class Builder {
         private String name;
         private BigDecimal odds;

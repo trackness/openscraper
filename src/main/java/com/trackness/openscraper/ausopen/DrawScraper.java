@@ -34,7 +34,6 @@ public class DrawScraper {
                     .withPlayer1(playerHelper(players.get(0)))
                     .withPlayer2(playerHelper(players.get(1)))
                     .atIndex(i)
-                    .inRound(1)
                     .build());
         }
         return matches;
