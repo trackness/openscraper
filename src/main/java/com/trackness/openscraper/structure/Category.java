@@ -103,7 +103,6 @@ public class Category {
             ArrayList<Round> rounds = new ArrayList<>();
             for (int i = 0; i < numberOfRounds; i++) {
                 rounds.add(i, new Round.Builder()
-                        .withName("a")
                         .withIndex(i)
                         .build());
             }

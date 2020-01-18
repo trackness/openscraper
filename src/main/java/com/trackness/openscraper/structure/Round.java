@@ -10,11 +10,9 @@ import static com.trackness.openscraper.structure.Tournament.PAD_ROUND;
 import static com.trackness.openscraper.structure.Tournament.PAD_WINNER;
 
 class Round {
-    private String name;
     private int index;
     private ArrayList<Match> matches;
 
-    public String getName() { return name; }
     public int getIndex() { return index; }
     ArrayList<Match> getMatches() { return matches; }
 
@@ -63,13 +61,7 @@ class Round {
     }
 
     public static class Builder {
-        private String name;
         private int index;
-
-        Builder withName(String name) {
-            this.name = name;
-            return this;
-        }
 
         Builder withIndex(int index) {
             this.index = index;
@@ -78,7 +70,6 @@ class Round {
 
         public Round build() {
             Round round = new Round();
-            round.name = this.name;
             round.index = this.index;
             round.matches = new ArrayList<>();
             return round;
