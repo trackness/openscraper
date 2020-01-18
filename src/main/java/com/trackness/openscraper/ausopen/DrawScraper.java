@@ -1,6 +1,5 @@
 package com.trackness.openscraper.ausopen;
 
-import com.trackness.openscraper.oddschecker.PlayerOdds;
 import com.trackness.openscraper.structure.Match;
 import com.trackness.openscraper.structure.Player;
 import org.jsoup.Jsoup;
@@ -12,32 +11,36 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import static com.trackness.openscraper.App.DEBUG;
+import static com.trackness.openscraper.App.DEBUG_LINE;
+import static com.trackness.openscraper.App.MATCH_DEBUG;
 import static java.lang.Integer.parseInt;
 
 public class DrawScraper {
 
-    private static boolean debug = false;
     private static ArrayList<Match> matches = new ArrayList<>();
 
     public static void main(String[] args) throws IOException {
-        matches = getMatchesFromFile(new File("src/main/resources/AO_Womens.html"));
+        matches = getMatchesFromFile("src/main/resources/AO_Womens.html");
     }
 
-    public static ArrayList<Match> getFirstRoundMatches(
-            boolean debugThis,
-            File drawSource,
-            ArrayList<PlayerOdds> oddsList
-    ) throws IOException {
-        debug = debugThis;
-        return updateWIthOdds(getMatchesFromFile(drawSource), oddsList);
+    public static ArrayList<Match> getMatchesFromFile(String drawSourceString) throws IOException {
+        if (DEBUG) System.out.println(DEBUG_LINE + "\n--- Getting first round match data from draw file ---\n" + DEBUG_LINE);
+        return getMatchesFromElements(getElementsFromFile(drawSourceString));
     }
 
-    private static ArrayList<Match> getMatchesFromFile(File drawSource) throws IOException {
-        System.out.println("--- Getting first round match data from draw file ---");
-        Document rawDraw = Jsoup.parse(drawSource, null);
-        System.out.println(String.format("%sSource title: %s%s", debug ? "\n" : "", rawDraw.title(), debug ? "\n" : ""));
+    private static Elements getElementsFromFile(String drawSourceFile) throws IOException {
+        if (DEBUG) System.out.print("- Parsing file to Jsoup document.. ");
+        Document rawDraw = Jsoup.parse(new File(drawSourceFile), null);
+        if (DEBUG) System.out.println(String.format("Parsed to document with title: %s", rawDraw.title()));
+        if (DEBUG) System.out.print("- Filtering document content for match data.. ");
         Elements foundMatches = rawDraw.getElementsByClass("score-card carousel-index-0 -first-round -full-draw");
-        System.out.println(String.format("%sData found for %s matches %s", debug ? "\n" : "", foundMatches.size(), debug ? "\n" : ""));
+        if (DEBUG) System.out.println(String.format("Data found for %s matches", foundMatches.size()));
+        return foundMatches;
+    }
+
+    private static ArrayList<Match> getMatchesFromElements(Elements foundMatches) {
+        if (DEBUG) System.out.print(String.format("- Preparing %s match objects.. ", foundMatches.size()));
         for (int i = 0; i < foundMatches.size(); i++) {
             Elements players = foundMatches.get(i).getElementsByClass("team-detail__players");
             matches.add(i, new Match.Builder()
@@ -47,41 +50,42 @@ public class DrawScraper {
                     .inRound(1)
                     .build());
         }
-        System.out.println(String.format("%s%s matches prepared%s", debug ? "\n" : "", matches.size(), debug ? "\n" : ""));
-        if (debug) for (Match match: matches) match.printDetails();
+        if (DEBUG) System.out.println(String.format("%s match objects prepared", matches.size()));
+        if (MATCH_DEBUG) for (Match match: matches) match.printDetails();
         return matches;
     }
 
-    private static ArrayList<Match> updateWIthOdds(ArrayList<Match> matchArrayList, ArrayList<PlayerOdds> oddsList) {
-        System.out.println("--- Applying odds data to first round match data ---");
-        System.out.println(String.format("%sSetting odds for matched players%s", debug ? "\n" : "", debug ? "\n" : ""));
-        int matched = 0;
-        for (Match match : matchArrayList) {
-            for (PlayerOdds playerOdds : oddsList) {
-                if (match.getPlayer1().getNameStandard().equals(playerOdds.getName())) {
-                    match.getPlayer1().setOdds(playerOdds.getOdds());
-                    match.getPlayer1().setConfidence(playerOdds.getConfidence());
-//                    if (debug) match.getPlayer1().printDetails();
-                    matched++;
-                }
-                if (match.getPlayer2().getNameStandard().equals(playerOdds.getName())) {
-                    match.getPlayer2().setOdds(playerOdds.getOdds());
-                    match.getPlayer2().setConfidence(playerOdds.getConfidence());
-//                    if (debug) match.getPlayer2().printDetails();
-                    matched++;
-                }
-            }
-            match.setExpectedWinner();
-            if (debug) match.printDetails();
-        }
-        System.out.println(String.format("%sPlayers matched to odds: %s / %s%s",
-                debug ? "\n" : "",
-                matched,
-                oddsList.size(),
-                debug ? "\n" : ""
-        ));
-        return matchArrayList;
-    }
+//    private static ArrayList<Match> updateWithOdds(ArrayList<Match> matchArrayList, ArrayList<PlayerOdds> oddsList) {
+//        System.out.println("--- Applying odds data to first round match data ---");
+//        System.out.println(String.format("%sSetting odds for matched players%s", DEBUG ? "\n" : "", DEBUG ? "\n" : ""));
+//        if (MATCH_DEBUG) System.out.println(String.format("------------ Round %s ------------", 1));
+//        int matched = 0;
+//        for (Match match : matchArrayList) {
+//            for (PlayerOdds playerOdds : oddsList) {
+//                if (match.getPlayer1().getNameStandard().equals(playerOdds.getName())) {
+//                    match.getPlayer1().setOdds(playerOdds.getOddsFromUrl());
+//                    match.getPlayer1().setConfidence(playerOdds.getConfidence());
+////                    if (debug) match.getPlayer1().printDetails();
+//                    matched++;
+//                }
+//                if (match.getPlayer2().getNameStandard().equals(playerOdds.getName())) {
+//                    match.getPlayer2().setOdds(playerOdds.getOddsFromUrl());
+//                    match.getPlayer2().setConfidence(playerOdds.getConfidence());
+////                    if (debug) match.getPlayer2().printDetails();
+//                    matched++;
+//                }
+//            }
+//            match.setExpectedWinner();
+//            if (MATCH_DEBUG) match.printDetails();
+//        }
+//        System.out.println(String.format("%sPlayers matched to odds: %s / %s%s",
+//                DEBUG ? "\n" : "",
+//                matched,
+//                oddsList.size(),
+//                DEBUG ? "\n" : ""
+//        ));
+//        return matchArrayList;
+//    }
 
     private static Player playerHelper(Element rawPlayer) {
         Player player;

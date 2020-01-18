@@ -10,40 +10,39 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
 
+import static com.trackness.openscraper.App.DEBUG;
+import static com.trackness.openscraper.App.DEBUG_LINE;
+import static com.trackness.openscraper.App.MATCH_DEBUG;
+
 public class OddsScraper {
 
-    private static boolean debug = false;
     private static ArrayList<PlayerOdds> playerOddsList = new ArrayList<>();
 
-    public static void main(String[] args) {
-        playerOddsList = getOddsFromTable(getTableFromSearch(
+    public static void main(String[] args) throws IOException {
+        playerOddsList = getOddsFromElements(getElementsFromUrl(
                 "https://www.oddschecker.com/tennis/australian-open/womens/winner"
         ));
     }
 
-    public static ArrayList<PlayerOdds> getOdds(boolean debugThis, String oddsSource) {
-        debug = debugThis;
-        return getOddsFromTable(getTableFromSearch(oddsSource));
+    public static ArrayList<PlayerOdds> getOddsFromUrl(String oddsSource) throws IOException {
+        if (DEBUG) System.out.println(DEBUG_LINE + "\n--- Getting odds data from OddsChecker ---\n" + DEBUG_LINE);
+        return getOddsFromElements(getElementsFromUrl(oddsSource));
     }
 
-    private static Elements getTableFromSearch(String oddsSource) {
-        System.out.println("--- Getting odds data from OddsChecker ---");
-        Elements playerRows = null;
-        try {
-            Document rawOdds = Jsoup.connect(oddsSource).userAgent("Mozilla").get();
-            System.out.println(String.format("%sSource title: %s%s", debug ? "\n" : "", rawOdds.title(), debug ? "\n" : ""));
-            playerRows = rawOdds.body().getElementById("t1").getElementsByClass("diff-row evTabRow bc");
-            System.out.println(String.format("%sRows found for %s players%s", debug ? "\n" : "", playerRows.size(), debug ? "\n" : ""));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return playerRows;
+    private static Elements getElementsFromUrl(String oddsSourceUrl) throws IOException {
+        if (DEBUG) System.out.print("- Parsing url to Jsoup document.. ");
+        Document rawOdds = Jsoup.connect(oddsSourceUrl).userAgent("Mozilla").get();
+        if (DEBUG) System.out.println(String.format("Parsed to document with title: %s", rawOdds.title()));
+        if (DEBUG) System.out.print("- Filtering document content for player data.. ");
+        Elements foundPlayers = rawOdds.body().getElementById("t1").getElementsByClass("diff-row evTabRow bc");
+        if (DEBUG) System.out.println(String.format("Data found for %s players", foundPlayers.size()));
+        return foundPlayers;
     }
 
-    private static ArrayList<PlayerOdds> getOddsFromTable(Elements playerRows) {
-        for (Element playerRow : playerRows) {
-            String playerName = playerRow.getElementsByClass("popup selTxt").get(0).text();
-            Elements playerOddsElements = playerRow.getElementsByAttribute("data-fodds");
+    private static ArrayList<PlayerOdds> getOddsFromElements(Elements foundPlayers) {
+        if (DEBUG) System.out.print(String.format("- Preparing %s player odds objects.. ", foundPlayers.size()));
+        for (Element foundPlayer : foundPlayers) {
+            Elements playerOddsElements = foundPlayer.getElementsByAttribute("data-fodds");
             BigDecimal oddsSum = new BigDecimal("0");
             BigDecimal oddsTally = new BigDecimal("0");
             for (Element oddsElement : playerOddsElements) {
@@ -54,19 +53,13 @@ public class OddsScraper {
                 }
             }
             playerOddsList.add(new PlayerOdds.Builder()
-                    .setName(playerName)
+                    .setName(foundPlayer.getElementsByClass("popup selTxt").get(0).text())
                     .setOdds(oddsSum.divide(oddsTally, RoundingMode.valueOf(2)))
                     .setConfidence(oddsTally.intValue())
                     .build());
         }
-        if (debug) for (PlayerOdds playerOdds : playerOddsList) {
-            System.out.println(String.format("%s: %s, confidence %s",
-                playerOdds.getName(),
-                playerOdds.getOdds(),
-                playerOdds.getConfidence()
-            ));
-        }
-        System.out.println(String.format("%sOdds prepared for %s players%s", debug ? "\n" : "", playerOddsList.size(), debug ? "\n" : ""));
+        if (DEBUG) System.out.println(String.format("%s player odds objects prepared", playerOddsList.size()));
+        if (MATCH_DEBUG) for (PlayerOdds playerOdds : playerOddsList) playerOdds.printDetails();
         return playerOddsList;
     }
 }
