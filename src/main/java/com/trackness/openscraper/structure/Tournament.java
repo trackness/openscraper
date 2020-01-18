@@ -1,46 +1,32 @@
 package com.trackness.openscraper.structure;
 
-import static com.trackness.openscraper.structure.StructureConfig.MENS;
-import static com.trackness.openscraper.structure.StructureConfig.WOMENS;
+import java.util.ArrayList;
 
 public class Tournament {
     private String name;
-    private Gender mens;
-    private Gender womens;
+    private ArrayList<Category> categories;
 
     public String getName() { return name; }
-    public Gender getMens() { return mens; }
-    public Gender getWomens() { return womens; }
+    public ArrayList<Category> getCategories() { return categories; }
 
     public static class Builder {
         private String name;
-        private Gender mens;
-        private Gender womens;
+        private ArrayList<Category> categories;
 
         public Builder withName(String name) {
             this.name = name;
             return this;
         }
 
-        public Builder withMens() {
-            this.mens = new Gender.Builder()
-                    .withName(MENS.getName())
-                    .build();
-            return this;
-        }
-
-        public Builder withWomens() {
-            this.womens = new Gender.Builder()
-                    .withName(WOMENS.getName())
-                    .build();
+        public Builder withCategories(ArrayList<Category> categories) {
+            this.categories = categories;
             return this;
         }
 
         public Tournament build() {
             Tournament tournament = new Tournament();
             tournament.name = this.name;
-            tournament.mens = this.mens;
-            tournament.womens = this.womens;
+            tournament.categories = this.categories;
             return tournament;
         }
     }
