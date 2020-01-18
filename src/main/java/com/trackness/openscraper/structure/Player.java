@@ -27,17 +27,6 @@ public class Player {
     public void setOdds(BigDecimal odds) { this.odds = odds; }
     public void setConfidence(int confidence) { this.confidence = confidence; }
 
-    public void printDetails() {
-        System.out.println(String.format(
-                "%s %s%s%s%s",
-                nationality,
-                nameStandard,
-                seed != 0 ? String.format(" (%s)", seed) : "",
-                !odds.equals(new BigDecimal("999")) ? String.format(" : %s", odds) : "",
-                confidence != 0 ? String.format(" (%s)", confidence) : ""
-        ));
-    }
-
     public static class Qualifier{
         public Player build() {
             Player player = new Player();
@@ -50,6 +39,7 @@ public class Player {
             return player;
         }
     }
+
     public static class Builder {
 
         private String nameStandard;

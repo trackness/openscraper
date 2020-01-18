@@ -9,6 +9,7 @@ public class Match {
 
     public Player getPlayer1() { return player1; }
     public Player getPlayer2() { return player2; }
+    public Player getExpectedWinner() { return expectedWinner; }
     public Integer getRound() { return round; }
     public Integer getIndex() { return index; }
 
@@ -30,9 +31,10 @@ public class Match {
             case -1:
                 this.expectedWinner = player1;
                 break;
-//            case 0:
-//                this.expectedWinner = player1;
-//                break;
+            case 0:
+                if (Math.random() > 0.5 ) this.expectedWinner = player1;
+                else this.expectedWinner = player2;
+                break;
             case 1:
                 this.expectedWinner = player2;
                 break;
