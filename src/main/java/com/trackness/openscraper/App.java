@@ -3,7 +3,7 @@ package com.trackness.openscraper;
 import com.trackness.openscraper.io.DrawScraper.AusOpen;
 import com.trackness.openscraper.io.ExtFile;
 import com.trackness.openscraper.oddschecker.OddsScraper;
-import com.trackness.openscraper.output.Printer;
+import com.trackness.openscraper.output.Tabler;
 import com.trackness.openscraper.structure.Category;
 import com.trackness.openscraper.structure.Tournament;
 
@@ -51,7 +51,8 @@ public class App {
 
         ExtFile.serializeAndSave(FILE, tournament);
 //        tournament = deserialize(FILE);
-        Printer.tournamentToText(tournament);
+//        Printer.tournamentToText(tournament);
+        Tabler.asciiTabler(tournament);
     }
 
     private static Properties loadConfig() {
