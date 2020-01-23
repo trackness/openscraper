@@ -1,6 +1,7 @@
 package com.trackness.openscraper;
 
 import com.trackness.openscraper.ausopen.DrawScraper;
+import com.trackness.openscraper.io.ExtFile;
 import com.trackness.openscraper.oddschecker.OddsScraper;
 import com.trackness.openscraper.structure.Category;
 import com.trackness.openscraper.structure.Tournament;
@@ -18,6 +19,7 @@ import static java.lang.Integer.parseInt;
 
 public class App {
 
+    private static final String FILE = "text.txt";
     private static final Properties PROPERTIES = loadConfig();
 
     public static void main(String[] args) throws IOException {
@@ -41,6 +43,8 @@ public class App {
         tournament.getCategories().get(1).setAllResults(
                     DrawScraper.getMatchesFromFile(PROPERTIES.getProperty("category.womens.file.players")),
                     OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.womens.url.odds")));
+        ExtFile.serializeAndSave(FILE, tournament);
+//        tournament = deserialize(FILE);
 
         tournament.printAll();
     }
