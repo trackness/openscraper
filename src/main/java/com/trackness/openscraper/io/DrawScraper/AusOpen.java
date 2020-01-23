@@ -1,4 +1,4 @@
-package com.trackness.openscraper.ausopen;
+package com.trackness.openscraper.io.DrawScraper;
 
 import com.trackness.openscraper.structure.Match;
 import com.trackness.openscraper.structure.Player;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 import static java.lang.Integer.parseInt;
 
-public class DrawScraper {
+public class AusOpen {
 
     private static ArrayList<Match> matches;
 

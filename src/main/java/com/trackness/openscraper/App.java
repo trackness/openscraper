@@ -1,6 +1,7 @@
 package com.trackness.openscraper;
 
 import com.trackness.openscraper.io.DrawScraper.AusOpen;
+import com.trackness.openscraper.io.ExtFile;
 import com.trackness.openscraper.oddschecker.OddsScraper;
 import com.trackness.openscraper.output.Printer;
 import com.trackness.openscraper.structure.Category;
@@ -18,6 +19,8 @@ import static java.lang.Integer.parseInt;
 
 
 public class App {
+//    TODO - Provide string template for tournament name and date to be used
+    private static final String FILE = "text.txt";
 
     private static final Properties PROPERTIES = loadConfig();
 
@@ -32,21 +35,22 @@ public class App {
                         new Category.Builder()
                                 .withName(PROPERTIES.getProperty("category.mens.name"))
                                 .withRounds(parseInt(PROPERTIES.getProperty("tournament.rounds")))
+                                .withDrawSource(AusOpen.getMatchesFromFile(PROPERTIES.getProperty("category.mens.file.players")))
+                                .withOddsSource(OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.mens.url.odds")))
                                 .build(),
                         new Category.Builder()
                                 .withName(PROPERTIES.getProperty("category.womens.name"))
                                 .withRounds(parseInt(PROPERTIES.getProperty("tournament.rounds")))
+                                .withDrawSource(AusOpen.getMatchesFromFile(PROPERTIES.getProperty("category.womens.file.players")))
+                                .withOddsSource(OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.womens.url.odds")))
                                 .build()
                 )))
                 .build();
 
-        tournament.getCategories().get(0).setAllResults(
-                AusOpen.getMatchesFromFile(PROPERTIES.getProperty("category.mens.file.players")),
-                    OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.mens.url.odds")));
-        tournament.getCategories().get(1).setAllResults(
-                AusOpen.getMatchesFromFile(PROPERTIES.getProperty("category.womens.file.players")),
-                    OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.womens.url.odds")));
+        tournament.setAllResults();
 
+        ExtFile.serializeAndSave(FILE, tournament);
+//        tournament = deserialize(FILE);
         Printer.tournamentToText(tournament);
     }
 

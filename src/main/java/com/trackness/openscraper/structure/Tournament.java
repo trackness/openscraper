@@ -10,6 +10,12 @@ public class Tournament {
     public String getName() { return name; }
     public ArrayList<Category> getCategories() { return categories; }
 
+    public void setAllResults() {
+        for (Category category : categories) {
+            category.setAllResults();
+        }
+    }
+
     public static class Builder {
         private String name;
         private ArrayList<Category> categories;

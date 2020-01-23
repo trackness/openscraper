@@ -7,10 +7,12 @@ import java.util.ArrayList;
 public class Category {
     private String name;
     private ArrayList<Round> rounds;
+    private ArrayList<Match> drawSource;
+    private ArrayList<PlayerOdds> oddsSource;
 
-    public void setAllResults(ArrayList<Match> matches, ArrayList<PlayerOdds> oddsList) {
-        setPlayerOdds(matches, oddsList);
-        setFirstRound(matches);
+    void setAllResults() {
+        setPlayerOdds(drawSource, oddsSource);
+        setFirstRound(drawSource);
         setRemainingRounds();
     }
 
@@ -43,6 +45,8 @@ public class Category {
     public static class Builder {
         private String name;
         private ArrayList<Round> rounds;
+        private ArrayList<Match> drawSource;
+        private ArrayList<PlayerOdds> oddsSource;
 
         public Builder withName(String name) {
             this.name = name;
@@ -60,10 +64,22 @@ public class Category {
             return this;
         }
 
+        public Builder withDrawSource(ArrayList<Match> drawSource) {
+            this.drawSource = drawSource;
+            return this;
+        }
+
+        public Builder withOddsSource(ArrayList<PlayerOdds> oddsSource) {
+            this.oddsSource = oddsSource;
+            return this;
+        }
+
         public Category build() {
             Category category = new Category();
             category.name = this.name;
             category.rounds = this.rounds;
+            category.drawSource = this.drawSource;
+            category.oddsSource = this.oddsSource;
             return category;
         }
     }
