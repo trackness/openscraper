@@ -1,8 +1,8 @@
 package com.trackness.openscraper;
 
-import com.trackness.openscraper.ausopen.DrawScraper;
-import com.trackness.openscraper.io.ExtFile;
+import com.trackness.openscraper.io.DrawScraper.AusOpen;
 import com.trackness.openscraper.oddschecker.OddsScraper;
+import com.trackness.openscraper.output.Printer;
 import com.trackness.openscraper.structure.Category;
 import com.trackness.openscraper.structure.Tournament;
 
@@ -19,10 +19,13 @@ import static java.lang.Integer.parseInt;
 
 public class App {
 
-    private static final String FILE = "text.txt";
     private static final Properties PROPERTIES = loadConfig();
 
     public static void main(String[] args) throws IOException {
+        ausOpen();
+    }
+
+    private static void ausOpen() throws IOException {
         Tournament tournament = new Tournament.Builder()
                 .withName(PROPERTIES.getProperty("tournament.name"))
                 .withCategories(new ArrayList<>(Arrays.asList(
@@ -38,15 +41,13 @@ public class App {
                 .build();
 
         tournament.getCategories().get(0).setAllResults(
-                DrawScraper.getMatchesFromFile(PROPERTIES.getProperty("category.mens.file.players")),
+                AusOpen.getMatchesFromFile(PROPERTIES.getProperty("category.mens.file.players")),
                     OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.mens.url.odds")));
         tournament.getCategories().get(1).setAllResults(
-                    DrawScraper.getMatchesFromFile(PROPERTIES.getProperty("category.womens.file.players")),
+                AusOpen.getMatchesFromFile(PROPERTIES.getProperty("category.womens.file.players")),
                     OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.womens.url.odds")));
-        ExtFile.serializeAndSave(FILE, tournament);
-//        tournament = deserialize(FILE);
 
-        tournament.printAll();
+        Printer.tournamentToText(tournament);
     }
 
     private static Properties loadConfig() {
@@ -63,5 +64,4 @@ public class App {
         }
         return props;
     }
-
 }
