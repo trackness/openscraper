@@ -6,6 +6,7 @@ import com.trackness.openscraper.oddschecker.OddsScraper;
 import com.trackness.openscraper.output.Tabler;
 import com.trackness.openscraper.structure.Category;
 import com.trackness.openscraper.structure.Tournament;
+import org.apache.commons.cli.CommandLine;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,19 +18,22 @@ import java.util.Properties;
 
 import static java.lang.Integer.parseInt;
 
-
 public class App {
 //    TODO - Provide string template for tournament name and date to be used
-    private static final String FILE = "text.txt";
-
-    private static final Properties PROPERTIES = loadConfig();
+    private static final String FILE = "data/text.txt";
 
     public static void main(String[] args) throws IOException {
-        ausOpen();
+        CommandLine commandLine;
+        Tournament ausOpen = ausOpen("2020_aus.properties");
+        ausOpen.setAllResults();
+        ExtFile.serializeAndSave(FILE, ausOpen);
+//        Printer.tournamentToText(ausOpen);
+        Tabler.asciiTabler(ausOpen);
     }
 
-    private static void ausOpen() throws IOException {
-        Tournament tournament = new Tournament.Builder()
+    private static Tournament ausOpen(String propertiesSource) throws IOException {
+        final Properties PROPERTIES = loadConfig(propertiesSource);
+        return new Tournament.Builder()
                 .withName(PROPERTIES.getProperty("tournament.name"))
                 .withCategories(new ArrayList<>(Arrays.asList(
                         new Category.Builder()
@@ -46,17 +50,10 @@ public class App {
                                 .build()
                 )))
                 .build();
-
-        tournament.setAllResults();
-
-        ExtFile.serializeAndSave(FILE, tournament);
-//        tournament = deserialize(FILE);
-//        Printer.tournamentToText(tournament);
-        Tabler.asciiTabler(tournament);
     }
 
-    private static Properties loadConfig() {
-        File configFile = new File("src/main/resources/application.properties");
+    private static Properties loadConfig(String propertiesSource) {
+        final File configFile = new File("src/main/resources/" + propertiesSource);
         Properties props = new Properties();
         try {
             FileReader reader = new FileReader(configFile);
