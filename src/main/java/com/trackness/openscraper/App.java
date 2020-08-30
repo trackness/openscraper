@@ -1,12 +1,11 @@
 package com.trackness.openscraper;
 
-import com.trackness.openscraper.io.DrawScraper.AusOpen;
+import com.trackness.openscraper.io.draws.AusOpen;
 import com.trackness.openscraper.io.ExtFile;
-import com.trackness.openscraper.oddschecker.OddsScraper;
+import com.trackness.openscraper.odds.OddsScraper;
 import com.trackness.openscraper.output.Tabler;
 import com.trackness.openscraper.structure.Category;
 import com.trackness.openscraper.structure.Tournament;
-import org.apache.commons.cli.CommandLine;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,19 +18,20 @@ import java.util.Properties;
 import static java.lang.Integer.parseInt;
 
 public class App {
-//    TODO - Provide string template for tournament name and date to be used
-    private static final String FILE = "data/text.txt";
 
     public static void main(String[] args) throws IOException {
-        CommandLine commandLine;
-        Tournament ausOpen = ausOpen("2020_aus.properties");
-        ausOpen.setAllResults();
-        ExtFile.serializeAndSave(FILE, ausOpen);
-//        Printer.tournamentToText(ausOpen);
-        Tabler.asciiTabler(ausOpen);
+        String tournament_name = "us_open";
+        //    TODO - Provide string template for tournament name and date to be used
+        final String FILE = String.format("data/%s/text.txt", tournament_name);
+//        Config config = new Config();
+        Tournament tournament = buildTournament("2020_uso.properties");
+        tournament.setAllResults();
+        ExtFile.serializeAndSave(FILE, tournament);
+//        Printer.tournamentToText(tournament);
+        Tabler.asciiTabler(tournament);
     }
 
-    private static Tournament ausOpen(String propertiesSource) throws IOException {
+    private static Tournament buildTournament(String propertiesSource) throws IOException {
         final Properties PROPERTIES = loadConfig(propertiesSource);
         return new Tournament.Builder()
                 .withName(PROPERTIES.getProperty("tournament.name"))
@@ -54,16 +54,16 @@ public class App {
 
     private static Properties loadConfig(String propertiesSource) {
         final File configFile = new File("src/main/resources/" + propertiesSource);
-        Properties props = new Properties();
+        Properties properties = new Properties();
         try {
             FileReader reader = new FileReader(configFile);
-            props.load(reader);
+            properties.load(reader);
             reader.close();
         } catch (FileNotFoundException ex) {
             System.out.println("fuck");
         } catch (IOException ex) {
             // I/O error
         }
-        return props;
+        return properties;
     }
 }

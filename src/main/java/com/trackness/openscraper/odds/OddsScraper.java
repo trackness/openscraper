@@ -1,4 +1,4 @@
-package com.trackness.openscraper.oddschecker;
+package com.trackness.openscraper.odds;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public class OddsScraper {
 
-    private static ArrayList<PlayerOdds> playerOddsList = new ArrayList<>();
+    private static final ArrayList<PlayerOdds> playerOddsList = new ArrayList<>();
 
     public static ArrayList<PlayerOdds> getOddsFromUrl(String oddsSource) throws IOException {
         return getOddsFromElements(getElementsFromUrl(oddsSource));

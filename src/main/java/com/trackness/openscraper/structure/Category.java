@@ -1,6 +1,6 @@
 package com.trackness.openscraper.structure;
 
-import com.trackness.openscraper.oddschecker.PlayerOdds;
+import com.trackness.openscraper.odds.PlayerOdds;
 
 import java.util.ArrayList;
 

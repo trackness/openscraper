@@ -1,4 +1,4 @@
-package com.trackness.openscraper.oddschecker;
+package com.trackness.openscraper.odds;
 
 import java.math.BigDecimal;
 

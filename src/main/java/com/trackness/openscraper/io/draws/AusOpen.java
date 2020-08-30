@@ -1,4 +1,4 @@
-package com.trackness.openscraper.io.DrawScraper;
+package com.trackness.openscraper.io.draws;
 
 import com.trackness.openscraper.structure.Match;
 import com.trackness.openscraper.structure.Player;
