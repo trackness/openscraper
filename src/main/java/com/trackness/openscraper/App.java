@@ -1,11 +1,6 @@
 package com.trackness.openscraper;
 
-import com.trackness.openscraper.io.draws.AusOpen;
-import com.trackness.openscraper.io.ExtFile;
-import com.trackness.openscraper.odds.OddsScraper;
-import com.trackness.openscraper.output.Tabler;
-import com.trackness.openscraper.structure.Category;
-import com.trackness.openscraper.structure.Tournament;
+import static java.lang.Integer.parseInt;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,7 +10,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Properties;
 
-import static java.lang.Integer.parseInt;
+import com.trackness.openscraper.io.ExtFile;
+import com.trackness.openscraper.io.draws.AusOpen;
+import com.trackness.openscraper.odds.OddsScraper;
+import com.trackness.openscraper.output.Tabler;
+import com.trackness.openscraper.structure.Category;
+import com.trackness.openscraper.structure.Tournament;
 
 public class App {
 
@@ -23,7 +23,6 @@ public class App {
         String tournament_name = "us_open";
         //    TODO - Provide string template for tournament name and date to be used
         final String FILE = String.format("data/%s/text.txt", tournament_name);
-//        Config config = new Config();
         Tournament tournament = buildTournament("2020_uso.properties");
         tournament.setAllResults();
         ExtFile.serializeAndSave(FILE, tournament);
