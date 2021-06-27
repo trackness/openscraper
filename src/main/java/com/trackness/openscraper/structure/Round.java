@@ -13,6 +13,7 @@ public class Round {
         for (Match match : firstRoundMatchList) {
             match.setExpectedWinner();
         }
+        System.out.println(matches);
         this.matches = firstRoundMatchList;
     }
 

@@ -51,14 +51,14 @@ public class Printer {
     private static final String T_LINE = "%s".repeat(COLUMN_COUNT * 2 + 1);
 
     private static void dividingLine(String c0, String c1, String c2, String c3, String c4, String c5) {
-        System.out.println(String.format(T_LINE,
+        System.out.printf((T_LINE) + "%n",
                 c0, "═".repeat(PAD_R_HEADER),
                 c1, "═".repeat(PAD_M_HEADER),
                 c2, "═".repeat(PAD_P_FULL_HEADER),
                 c3, "═".repeat(PAD_P_FULL_HEADER),
                 c4, "═".repeat(PAD_P_NAME_HEADER),
                 c5
-        ));
+        );
     }
 
     public static void tournamentToText(Tournament tournament) {
@@ -76,7 +76,7 @@ public class Printer {
 
     private static void printCategoryHeader(String tournamentName, Category category) {
         dividingLine("╔", "═", "═", "═", "═", "╗");
-        System.out.println(String.format("║%s║", StringUtils.center(tournamentName + " - " + category.getName(), PAD_C_HEADER)));
+        System.out.printf("║%s║%n", StringUtils.center(tournamentName + " - " + category.getName(), PAD_C_HEADER));
         dividingLine("╠", "╤", "╦", "╤", "╦", "╣");
     }
 

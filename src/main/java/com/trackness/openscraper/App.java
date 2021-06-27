@@ -11,7 +11,7 @@ import java.util.Arrays;
 import java.util.Properties;
 
 import com.trackness.openscraper.io.ExtFile;
-import com.trackness.openscraper.io.draws.AusOpen;
+import com.trackness.openscraper.io.draws.RolandGarros;
 import com.trackness.openscraper.odds.OddsScraper;
 import com.trackness.openscraper.output.Tabler;
 import com.trackness.openscraper.structure.Category;
@@ -19,33 +19,55 @@ import com.trackness.openscraper.structure.Tournament;
 
 public class App {
 
+    private static final String AUSTRALIAN_OPEN = "Australian Open";
+    private static final String ROLAND_GARROS = "Roland Garros";
+    private static final String WIMBLEDON = "Wimbledon";
+    private static final String US_OPEN = "US Open";
+
     public static void main(String[] args) throws IOException {
-        String tournament_name = "us_open";
+        Properties config = loadConfig("2021_rg.properties");
+//        String cache_template = config.getProperty("tournament.cache");
         //    TODO - Provide string template for tournament name and date to be used
-        final String FILE = String.format("data/%s/text.txt", tournament_name);
-        Tournament tournament = buildTournament("2020_uso.properties");
+        Tournament tournament = buildTournament(config);
+//        ExtFile.serializeAndSave(String.format(cache_template, "0"), tournament);
         tournament.setAllResults();
-        ExtFile.serializeAndSave(FILE, tournament);
+//        ExtFile.serializeAndSave(String.format(cache_template, "1"), tournament);
 //        Printer.tournamentToText(tournament);
         Tabler.asciiTabler(tournament);
     }
 
-    private static Tournament buildTournament(String propertiesSource) throws IOException {
-        final Properties PROPERTIES = loadConfig(propertiesSource);
+    private static Tournament buildTournament(Properties properties) throws IOException {
+
+//        Tournament tournament;
+//
+//        switch (properties.getProperty("tournament.name")) {
+//            case ROLAND_GARROS:
+//                tournament = new RolandGarros(properties);
+//                break;
+//            default:
+//                System.exit(0);
+//        }
+
         return new Tournament.Builder()
-                .withName(PROPERTIES.getProperty("tournament.name"))
+                .withName(properties.getProperty("tournament.name"))
                 .withCategories(new ArrayList<>(Arrays.asList(
                         new Category.Builder()
-                                .withName(PROPERTIES.getProperty("category.mens.name"))
-                                .withRounds(parseInt(PROPERTIES.getProperty("tournament.rounds")))
-                                .withDrawSource(AusOpen.getMatchesFromFile(PROPERTIES.getProperty("category.mens.file.players")))
-                                .withOddsSource(OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.mens.url.odds")))
+                                .withName(properties.getProperty("category.mens.name"))
+                                .withRounds(parseInt(properties.getProperty("tournament.rounds")))
+                                .withDrawSource(RolandGarros.scrapeMatchData(
+                                        properties.getProperty("tournament.url.base"),
+                                        properties.getProperty("category.mens.url")
+                                ))
+                                .withOddsSource(OddsScraper.getOddsFromUrl(properties.getProperty("category.mens.url.odds")))
                                 .build(),
                         new Category.Builder()
-                                .withName(PROPERTIES.getProperty("category.womens.name"))
-                                .withRounds(parseInt(PROPERTIES.getProperty("tournament.rounds")))
-                                .withDrawSource(AusOpen.getMatchesFromFile(PROPERTIES.getProperty("category.womens.file.players")))
-                                .withOddsSource(OddsScraper.getOddsFromUrl(PROPERTIES.getProperty("category.womens.url.odds")))
+                                .withName(properties.getProperty("category.womens.name"))
+                                .withRounds(parseInt(properties.getProperty("tournament.rounds")))
+                                .withDrawSource(RolandGarros.scrapeMatchData(
+                                        properties.getProperty("tournament.url.base"),
+                                        properties.getProperty("category.womens.url")
+                                ))
+                                .withOddsSource(OddsScraper.getOddsFromUrl(properties.getProperty("category.womens.url.odds")))
                                 .build()
                 )))
                 .build();

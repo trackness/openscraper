@@ -11,6 +11,7 @@ public class Tournament {
     public ArrayList<Category> getCategories() { return categories; }
 
     public void setAllResults() {
+        System.out.println("### Tournament.setAllResults()");
         for (Category category : categories) {
             category.setAllResults();
         }

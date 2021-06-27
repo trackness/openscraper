@@ -1,5 +1,7 @@
 package com.trackness.openscraper.structure;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.math.BigDecimal;
 
 public class Player {
@@ -7,6 +9,7 @@ public class Player {
     private String nameFormal;
     private String nationality;
     private int seed = 0;
+    private String nonSeed = "";
     private BigDecimal odds = new BigDecimal("999");
 
     String getNameStandard() { return nameStandard; }
@@ -16,14 +19,22 @@ public class Player {
     BigDecimal getOdds() { return odds; }
 
     public void setSeed(int seed) { this.seed = seed; }
+    public void setNonSeed(String nonSeed) { this.nonSeed = nonSeed; }
     void setOdds(BigDecimal odds) { this.odds = odds; }
+
+    public String tableSeed() {
+        String seedString  = "";
+        if (!nonSeed.equals("")) seedString = nonSeed;
+        if (seed != 0) seedString = String.valueOf(seed);
+        return seedString;
+    }
 
     public static class Qualifier{
         public Player build() {
             Player player = new Player();
             player.nameStandard = "Q";
             player.nameFormal = "Q";
-            player.nationality = "(QAL)";
+            player.nationality = "-Q-";
             return player;
         }
     }

@@ -1,5 +1,6 @@
 package com.trackness.openscraper.odds;
 
+import com.trackness.openscraper.structure.Player;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -35,6 +36,7 @@ public class OddsScraper {
                     oddsTally = oddsTally.add(new BigDecimal("1"));
                 }
             }
+
             playerOddsList.add(new PlayerOdds.Builder()
                     .setName(foundPlayer.getElementsByClass("popup selTxt").get(0).text())
                     .setOdds(oddsSum.divide(oddsTally, RoundingMode.valueOf(2)))
