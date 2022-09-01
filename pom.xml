@@ -12,7 +12,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>11</java.version>
         <version.junit-jupiter>5.5.2</version.junit-jupiter>
-        <version.jsoup>1.11.3</version.jsoup>
+        <version.jsoup>1.15.3</version.jsoup>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
     </properties>
